@@ -11,7 +11,6 @@ import About from './pages/About';
 import Event from './pages/Event';
 import Schedule from './pages/Schedule';
 import Guests from './pages/Guests';
-import Prizes from './pages/Prizes';
 import Register from './pages/Register';
 import Contact from './pages/Contact';
 
@@ -29,7 +28,6 @@ function App() {
               <Route path="/event" element={<Event />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/guests" element={<Guests />} />
-              <Route path="/prizes" element={<Prizes />} />
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

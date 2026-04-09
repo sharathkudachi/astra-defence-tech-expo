@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiMail, HiLocationMarker, HiCalendar, HiExternalLink } from 'react-icons/hi';
-import { FaInstagram, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram, FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
 const Contact = () => {
   const [mapType, setMapType] = useState('roadmap');
   const contactInfo = [
     {
       icon: <HiMail className="text-3xl text-accent-orange" />,
-      label: "Signal Dispatch",
-      value: "astraclub@bmsit.in",
-      link: "mailto:astraclub@bmsit.in"
+      label: "MAIL ID",
+      value: "astra@bmsit.in",
+      link: "mailto:astra@bmsit.in"
     },
     {
       icon: <HiLocationMarker className="text-3xl text-accent-orange" />,
@@ -28,7 +28,7 @@ const Contact = () => {
   const socials = [
     { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/astra.club.bmsit?igsh=MXI5dm44Nmc1cm90MQ==" },
     { icon: <FaLinkedin />, label: "LinkedIn", href: "https://www.linkedin.com/company/astra-club-bmsit/" },
-    { icon: <FaXTwitter />, label: "Twitter", href: "#" },
+    { icon: <FaWhatsapp />, label: "Whatsapp", href: "https://chat.whatsapp.com/Gql6zNG43NZ1By19sARbC5" },
   ];
 
   return (
@@ -81,6 +81,32 @@ const Contact = () => {
                   </a>
                 ))}
              </div>
+          </div>
+
+          {/* Contact Numbers */}
+          <div className="border border-accent-orange/30 bg-bg-surface relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-accent-orange" />
+            <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-accent-orange" />
+            <div className="px-6 py-4 border-b border-custom-border">
+              <span className="label-badge text-accent-orange text-xs uppercase tracking-badge">Point of Contact</span>
+            </div>
+            <div className="divide-y divide-custom-border">
+              {[
+                { name: "Arshad Alam", phones: ["+91 82355 19094"] },
+                { name: "Aditya Rai", phones: ["+91 96530 31551"] },
+              ].map((contact, i) => (
+                <div key={i} className="flex items-center justify-between px-6 py-4 group hover:bg-accent-orange/5 transition-colors">
+                  <span className="font-rajdhani text-text-primary uppercase tracking-badge text-sm">{contact.name}</span>
+                  <div className="flex flex-col items-end space-y-1">
+                    {contact.phones.map((phone, j) => (
+                      <a key={j} href={`tel:${phone.replace(/\s/g, '')}`} className="font-orbitron text-sm text-accent-orange hover:text-text-primary transition-colors">
+                        {phone}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

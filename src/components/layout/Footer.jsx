@@ -9,11 +9,7 @@ const Footer = () => {
         {/* Col 1: Branding */}
         <div className="space-y-6">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 border border-accent-orange flex items-center justify-center">
-              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-none stroke-accent-orange stroke-[5]">
-                <path d="M50 10 L15 30 L15 55 C15 75 50 90 50 90 C50 90 85 75 85 55 L85 30 L50 10 Z" />
-              </svg>
-            </div>
+            <img src="/astra-logo.png" alt="Astra Logo" className="h-12 w-auto object-contain" />
             <div>
               <span className="font-orbitron font-bold text-2xl tracking-tactical text-text-primary block">ASTRA</span>
               <span className="label-badge text-accent-orange text-[10px]">Innovation for National Security</span>
@@ -36,7 +32,6 @@ const Footer = () => {
             </ul>
             <ul className="space-y-3">
               <li><Link to="/guests" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Chief Guests</Link></li>
-              <li><Link to="/prizes" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Prizes</Link></li>
               <li><Link to="/contact" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Contact</Link></li>
               <li><Link to="/register" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Register</Link></li>
             </ul>
@@ -50,8 +45,8 @@ const Footer = () => {
             <div className="flex items-start space-x-3 group">
               <HiMail className="text-accent-orange text-xl mt-1 group-hover:scale-110 transition-transform" />
               <div>
-                <span className="block text-xs uppercase tracking-badge text-text-muted mb-1">Email Dispatch</span>
-                <a href="mailto:astraclub@bmsit.in" className="text-text-primary hover:text-accent-orange transition-colors text-sm font-inter">astraclub@bmsit.in</a>
+                <span className="block text-xs uppercase tracking-badge text-text-muted mb-1">Email</span>
+                <a href="mailto:astra@bmsit.in" className="text-text-primary hover:text-accent-orange transition-colors text-sm font-inter">astra@bmsit.in</a>
               </div>
             </div>
             <div className="flex items-start space-x-3 group">
@@ -59,7 +54,7 @@ const Footer = () => {
               <div>
                 <span className="block text-xs uppercase tracking-badge text-text-muted mb-1">EVENT LOCATION</span>
                 <p className="text-text-primary text-sm font-inter">
-                  BMSIT, Yelahanka, Bengaluru – 560064, Karnataka, India
+                  BMSIT&M, Yelahanka, Bengaluru – 560064, Karnataka, India
                 </p>
               </div>
             </div>
@@ -67,12 +62,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 border-t border-custom-border/50 pt-8 flex flex-col md:row items-center justify-between space-y-4 md:space-y-0 text-center md:text-left">
+      <div className="container mx-auto px-6 border-t border-custom-border/50 pt-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 text-center md:text-left">
         <p className="text-text-muted text-[10px] tracking-badge uppercase">
-          &copy; 2026 ASTRA Club, BMSIT. Compiled for National Security Awareness.
+          &copy; 2026 ASTRA Club, BMSIT&M. Compiled for National Security Awareness.
         </p>
         <div className="flex space-x-6">
-          <a href="#" className="label-badge text-[10px] text-text-muted hover:text-accent-orange transition-colors">Privacy Protocal</a>
+          <a href="#" className="label-badge text-[10px] text-text-muted hover:text-accent-orange transition-colors">Privacy Protocol</a>
           <a href="#" className="label-badge text-[10px] text-text-muted hover:text-accent-orange transition-colors">Terms of Op</a>
         </div>
       </div>

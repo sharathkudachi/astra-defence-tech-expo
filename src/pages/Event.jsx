@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  GiShield, 
   GiRobotLeg, 
   GiArtificialIntelligence, 
   GiLockSpy, 
@@ -9,19 +8,19 @@ import {
   GiProcessor, 
   GiRadarSweep, 
   GiDeliveryDrone,
-  GiCheckMark
+  GiCheckMark,
+  GiShield
 } from 'react-icons/gi';
 
 const Event = () => {
   const domains = [
-    { title: "Defence Technology", icon: <GiShield />, desc: "Next-gen tactical hardware, protective gear, and equipment designed for field operations. Focus on durability and battlefield effectiveness." },
-    { title: "Robotics & Autonomous Systems", icon: <GiRobotLeg />, desc: "UGVs, rescue robots, and automated surveillance systems. Emphasis on navigation in unstructured environments and task automation." },
-    { title: "AI & Machine Learning", icon: <GiArtificialIntelligence />, desc: "Predictive analytics, target recognition, and intelligent command systems. Using data to stay three steps ahead of the adversary." },
-    { title: "Cybersecurity & Ethical Hacking", icon: <GiLockSpy />, desc: "Offensive and defensive digital operations. Securing communication channels and protecting critical national assets from digital threats." },
-    { id: 5, title: "IoT & Smart Surveillance", icon: <GiCctvCamera />, desc: "Networked sensor arrays, smart perimeters, and wearable tech for soldiers. Enhancing situational awareness through connectivity." },
-    { id: 6, title: "Embedded Systems", icon: <GiProcessor />, desc: "High-performance computing in compact form factors. Designing the brains behind advanced sensors, munitions, and telemetry." },
-    { id: 7, title: "Communication Technologies", icon: <GiRadarSweep />, desc: "SDRs, encrypted protocols, and jam-resistant signals. Ensuring reliable communication in electronic warfare scenarios." },
-    { id: 8, title: "UAVs & Drones", icon: <GiDeliveryDrone />, desc: "Multi-rotors, fixed-wings, and swarming tech for recon and logistics. Redefining aerial superiority through student-led innovation." }
+    { title: "Robotics & Autonomous Systems in Defence Technology", icon: <GiRobotLeg />, desc: "UGVs, rescue robots, and automated surveillance systems. Emphasis on navigation in unstructured environments and task automation." },
+    { title: "AI & Machine Learning in Defence Technology", icon: <GiArtificialIntelligence />, desc: "Predictive analytics, target recognition, and intelligent command systems. Using data to stay three steps ahead of the adversary." },
+    { title: "Cybersecurity & Ethical Hacking in Defence Technology", icon: <GiLockSpy />, desc: "Offensive and defensive digital operations. Securing communication channels and protecting critical national assets from digital threats." },
+    { title: "IoT & Smart Surveillance in Defence Technology", icon: <GiCctvCamera />, desc: "Networked sensor arrays, smart perimeters, and wearable tech for soldiers. Enhancing situational awareness through connectivity." },
+    { title: "Embedded Systems in Defence Technology", icon: <GiProcessor />, desc: "High-performance computing in compact form factors. Designing the brains behind advanced sensors, munitions, and telemetry." },
+    { title: "Communication Technologies in Defence Technology", icon: <GiRadarSweep />, desc: "SDRs, encrypted protocols, and jam-resistant signals. Ensuring reliable communication in electronic warfare scenarios." },
+    { title: "UAVs & Drones in Defence Technology", icon: <GiDeliveryDrone />, desc: "Multi-rotors, fixed-wings, and swarming tech for recon and logistics. Redefining aerial superiority through student-led innovation." }
   ];
 
   const steps = [
@@ -34,11 +33,10 @@ const Event = () => {
         "Video Demonstration (3-5 mins)",
         "Supporting Technical Documents"
       ],
-      note: "Top 50 teams will be selected based on innovation and feasibility."
     },
     {
       step: "Round 2",
-      title: "Final Expo at BMSIT",
+      title: "Final Expo at BMSIT&M",
       details: [
         "Live physical demonstration",
         "Presentation to Expert Evaluation Panel",
@@ -68,7 +66,7 @@ const Event = () => {
         <span className="label-badge text-accent-orange mb-4 block">Operational Overview</span>
         <h1 className="text-4xl md:text-5xl font-orbitron mb-8">EVENT DETAILS</h1>
         <p className="text-text-muted text-lg leading-relaxed font-inter">
-          The Defence Technology Expo 2026 is a premier platform designed to showcase the next generation of tactical innovation. Hosted at BMSIT, the event brings together the brightest student minds and seasoned experts from India's elite defence organizations to witness the future of national security.
+          The Defence Technology Expo 2026 is a premier platform designed to showcase the next generation of tactical innovation. Hosted at BMSIT&M, the event brings together the brightest student minds and seasoned experts from India's elite defence organizations to witness the future of national security.
         </p>
       </section>
 
@@ -101,7 +99,7 @@ const Event = () => {
             </div>
             <h3 className="text-3xl font-orbitron text-accent-orange mb-4 uppercase">Student Competition</h3>
             <p className="text-text-muted mb-6 leading-relaxed">
-              Exclusively for students from engineering institutions. Compete for major prizes and receive evaluation from DRDO, HAL, BEL, and BDL experts.
+              Exclusively for students from engineering institutions. Compete for major prizes and receive evaluation from experts.
             </p>
             <ul className="space-y-3">
               <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-orange mr-2" /> Open to Students Only</li>
@@ -150,37 +148,12 @@ const Event = () => {
                      ))}
                    </ul>
                 </div>
-                <div className="pt-6 border-t border-custom-border">
-                  <p className="text-accent-amber font-rajdhani uppercase text-sm tracking-widest">
-                    Note: {step.note}
-                  </p>
-                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Evaluation Panel */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-orbitron mb-12 text-center underline underline-offset-8 decoration-accent-orange">EVALUATION PANEL</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {evaluators.map((org, idx) => (
-            <div key={idx} className="bg-bg-elevated border border-custom-border p-8 text-center border-b-2 border-b-accent-orange">
-              <span className="text-4xl font-orbitron text-text-primary block mb-2">{org.acronym}</span>
-              <span className="text-xs font-rajdhani text-accent-orange uppercase tracking-badge block mb-4">{org.full}</span>
-              <p className="text-text-muted text-[10px] leading-tight font-inter">
-                Focus: {org.role}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="text-center">
-          <p className="text-text-muted italic text-xs">
-            Evaluator participation is subject to availability of personnel from respective organizations on the day of the event.
-          </p>
-        </div>
-      </section>
     </motion.div>
   );
 };

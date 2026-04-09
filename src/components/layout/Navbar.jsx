@@ -9,7 +9,6 @@ const navLinks = [
   { name: 'Event', path: '/event' },
   { name: 'Schedule', path: '/schedule' },
   { name: 'Guests', path: '/guests' },
-  { name: 'Prizes', path: '/prizes' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -41,7 +40,7 @@ const Navbar = () => {
           </div>
           <div>
             <span className="font-orbitron font-bold text-xl tracking-tactical text-text-primary block leading-none">ASTRA</span>
-            <span className="font-rajdhani text-[10px] tracking-badge text-accent-orange block uppercase">BMSIT BENGALURU</span>
+            <span className="font-rajdhani text-[10px] tracking-badge text-accent-orange block uppercase">BMSIT&M BENGALURU</span>
           </div>
         </Link>
 
@@ -68,9 +67,17 @@ const Navbar = () => {
           <a
             href="/Defense Tech Expo Club Brochure.pdf"
             download="Defense Tech Expo Club Brochure.pdf"
-            className="px-6 py-2 border border-text-muted text-text-muted font-orbitron text-xs tracking-tactical uppercase hover:border-accent-orange hover:text-accent-orange transition-all duration-300"
+            className="px-6 py-2 border border-accent-orange text-accent-orange font-orbitron text-xs tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all duration-300"
           >
             Brochure
+          </a>
+          <a
+            href="https://forms.gle/rD5pU7kcRHF9V3dh8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 border border-accent-orange/60 text-accent-orange font-orbitron text-xs tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all duration-300"
+          >
+            Registration Link
           </a>
           <Link
             to="/register"

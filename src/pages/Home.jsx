@@ -4,7 +4,6 @@ import { HiArrowRight, HiLocationMarker } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import CountdownTimer from '../components/common/CountdownTimer';
 import { 
-  GiShield, 
   GiRobotLeg, 
   GiArtificialIntelligence, 
   GiLockSpy, 
@@ -34,22 +33,14 @@ const Home = () => {
     }
   };
 
-  const stats = [
-    { value: "₹50,000+", label: "Prize Pool" },
-    { value: "50", label: "Selected Teams" },
-    { value: "4", label: "Evaluation Orgs" },
-    { value: "30 APR", label: "2026" }
-  ];
-
   const domains = [
-    { id: 1, title: "Defence Technology", icon: <GiShield />, desc: "Next-gen tactical hardware and equipment." },
-    { id: 2, title: "Robotics & Autonomous Systems", icon: <GiRobotLeg />, desc: "Ground-based robotics and automation." },
-    { id: 3, title: "AI & Machine Learning", icon: <GiArtificialIntelligence />, desc: "Intelligence systems for tactical decision making." },
-    { id: 4, title: "Cybersecurity & Ethical Hacking", icon: <GiLockSpy />, desc: "Securing national digital infrastructure." },
-    { id: 5, title: "IoT & Smart Surveillance", icon: <GiCctvCamera />, desc: "Connected sensors for perimeter monitoring." },
-    { id: 6, title: "Embedded Systems", icon: <GiProcessor />, desc: "Specialized computing modules for defence." },
-    { id: 7, title: "Communication Technologies", icon: <GiRadarSweep />, desc: "Secure and resilient field communications." },
-    { id: 8, title: "UAVs & Drones", icon: <GiDeliveryDrone />, desc: "Aerial surveillance and payload delivery." }
+    { id: 2, title: "Robotics & Autonomous Systems in Defence Technology", icon: <GiRobotLeg />, desc: "Ground-based robotics and automation." },
+    { id: 3, title: "AI & Machine Learning in Defence Technology", icon: <GiArtificialIntelligence />, desc: "Intelligence systems for tactical decision making." },
+    { id: 4, title: "Cybersecurity & Ethical Hacking in Defence Technology", icon: <GiLockSpy />, desc: "Securing national digital infrastructure." },
+    { id: 5, title: "IoT & Smart Surveillance in Defence Technology", icon: <GiCctvCamera />, desc: "Connected sensors for perimeter monitoring." },
+    { id: 6, title: "Embedded Systems in Defence Technology", icon: <GiProcessor />, desc: "Specialized computing modules for defence." },
+    { id: 7, title: "Communication Technologies in Defence Technology", icon: <GiRadarSweep />, desc: "Secure and resilient field communications." },
+    { id: 8, title: "UAVs & Drones in Defence Technology", icon: <GiDeliveryDrone />, desc: "Aerial surveillance and payload delivery." }
   ];
 
   return (
@@ -63,7 +54,7 @@ const Home = () => {
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-20">
         <motion.div variants={itemVariants} className="mb-4">
           <span className="font-rajdhani text-accent-amber tracking-[0.2em] uppercase text-sm font-semibold">
-            ASTRA CLUB · BMSIT BENGALURU
+            ASTRA CLUB · BMSIT&M BENGALURU
           </span>
         </motion.div>
 
@@ -76,17 +67,14 @@ const Home = () => {
 
         <motion.h2 
           variants={itemVariants} 
-          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-orbitron font-black text-accent-orange mb-8 tracking-tighter"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-orbitron font-black text-accent-orange mb-4 tracking-tighter"
         >
           EXPO 2026
         </motion.h2>
 
-        <motion.p 
-          variants={itemVariants}
-          className="text-text-muted max-w-2xl text-lg md:text-xl font-inter mb-10 leading-relaxed"
-        >
-          Innovating for National Security | Powered by Students | Inspired by Defence
-        </motion.p>
+        <motion.div variants={itemVariants} className="mb-10">
+          <span className="text-2xl md:text-3xl font-orbitron text-accent-amber tracking-widest">30 APR 2026</span>
+        </motion.div>
 
         <motion.div variants={itemVariants} className="mb-12">
           <CountdownTimer />
@@ -95,7 +83,7 @@ const Home = () => {
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
           <Link 
             to="/register" 
-            className="px-10 py-4 bg-accent-orange text-bg-base font-orbitron font-bold tracking-tactical uppercase hover:scale-105 transition-transform animate-glow-pulse"
+            className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
             Register on Unstop
           </Link>
@@ -106,9 +94,17 @@ const Home = () => {
           >
             Download Brochure
           </a>
+          <a
+            href="https://forms.gle/rD5pU7kcRHF9V3dh8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
+          >
+            Registration Link
+          </a>
           <Link 
             to="/event" 
-            className="px-10 py-4 border border-text-primary text-text-primary font-orbitron font-bold tracking-tactical uppercase hover:bg-text-primary hover:text-bg-base transition-all"
+            className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
             Explore the Expo
           </Link>
@@ -116,20 +112,16 @@ const Home = () => {
 
         <motion.div variants={itemVariants} className="mt-16 flex items-center text-text-muted font-rajdhani tracking-widest uppercase">
           <HiLocationMarker className="text-accent-orange mr-2 text-xl" />
-          <span>30 April 2026 · BMSIT, Bengaluru</span>
+          <span>30 April 2026 · BMSIT&M, Bengaluru</span>
         </motion.div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-bg-surface border-y border-custom-border/50 py-10">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-custom-border/30">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col items-center justify-center p-6">
-                <span className="text-3xl md:text-4xl font-orbitron text-text-primary mb-2">{stat.value}</span>
-                <span className="text-xs uppercase tracking-badge text-accent-orange font-rajdhani">{stat.label}</span>
-              </div>
-            ))}
+      {/* Prize Pool Bar */}
+      <section className="bg-bg-surface border-y border-custom-border/50 py-12">
+        <div className="container mx-auto px-6 flex items-center justify-center">
+          <div className="text-center">
+            <span className="text-5xl md:text-7xl font-orbitron text-accent-orange font-black tracking-tighter">₹50,000+</span>
+            <span className="block text-sm uppercase tracking-[0.3em] text-text-muted font-rajdhani mt-3">Total Prize Pool</span>
           </div>
         </div>
       </section>
@@ -167,74 +159,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Chief Guest Teaser */}
+      {/* Chief Guests - Coming Soon */}
       <section className="bg-bg-elevated py-24 relative overflow-hidden">
-        <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
-          <div className="w-full lg:w-1/2">
-            <span className="label-badge text-accent-amber px-3 py-1 border border-accent-amber/30 mb-6 inline-block">
-              Chief Guest
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-orbitron mb-6">Brigadier B. M. Cariappa (Retd.)</h2>
-            <p className="text-text-muted text-lg mb-8 leading-relaxed font-inter">
-              Kargil War Veteran and Vir Chakra Awardee. A decorated officer known for exceptional courage and strategic leadership.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-10">
-              <span className="bg-accent-amber/10 text-accent-amber border border-accent-amber/20 px-4 py-1.5 label-badge text-xs">Kargil War Veteran</span>
-              <span className="bg-accent-orange/10 text-accent-orange border border-accent-orange/20 px-4 py-1.5 label-badge text-xs">Vir Chakra Awardee</span>
-            </div>
-            <Link 
-              to="/guests" 
-              className="px-8 py-3 border border-accent-orange text-accent-orange font-rajdhani uppercase tracking-badge hover:bg-accent-orange hover:text-bg-base transition-all inline-flex items-center min-h-[44px]"
-            >
-              View Chief Guests <HiArrowRight className="ml-2" />
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="label-badge text-accent-amber mb-4 block">Official Delegates</span>
+            <h2 className="text-4xl font-orbitron">CHIEF GUESTS & SPEAKERS</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
+            {[0, 1].map((i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.03 }}
+                className="relative border border-accent-orange/40 bg-bg-surface overflow-hidden group"
+                style={{ boxShadow: '0 0 20px rgba(255,107,0,0.08)' }}
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.05)_0%,transparent_70%)] animate-pulse pointer-events-none" />
+                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-accent-orange" />
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-accent-orange" />
+                <div className="aspect-square flex flex-col items-center justify-center p-10 text-center">
+                  <div className="w-24 h-24 rounded-full border-2 border-accent-orange/50 flex items-center justify-center mb-6 relative">
+                    <span className="absolute inset-0 rounded-full border border-accent-orange/30 animate-ping" />
+                    <span className="text-5xl font-orbitron text-accent-orange/60">?</span>
+                  </div>
+                  <p className="font-orbitron text-accent-orange tracking-widest text-sm animate-pulse">Revealing Soon...</p>
+                  <p className="text-text-muted text-xs font-rajdhani uppercase tracking-badge mt-2">Identity Classified</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link to="/guests" className="flex items-center justify-center text-accent-orange font-rajdhani uppercase tracking-badge group">
+              View Details <HiArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
-          <div className="w-full lg:w-1/2 aspect-video relative">
-            <div className="absolute inset-0 border-2 border-accent-orange/30 m-4" />
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-accent-orange" />
-            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent-orange" />
-            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-accent-orange" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-accent-orange" />
-            <div className="w-full h-full bg-black flex items-center justify-center border border-custom-border overflow-hidden">
-               <img src="/guest 1.png" alt="Brigadier Cariappa" className="w-full h-full object-contain" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prize Teaser */}
-      <section className="py-24 container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="label-badge text-accent-orange">Recognition</span>
-          <h2 className="text-4xl font-orbitron mt-2 mb-4">AWARDS & RECOGNITION</h2>
-          <div className="h-1 w-24 bg-accent-orange mx-auto mb-8" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16 items-end">
-          <div className="bg-bg-surface border border-custom-border p-10 text-center relative pt-20">
-             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 border border-accent-amber bg-bg-base flex items-center justify-center font-orbitron text-4xl text-accent-amber">2</div>
-             <h3 className="text-2xl font-rajdhani mb-2">SILVER</h3>
-             <span className="text-3xl font-orbitron text-text-primary block mb-4">₹15,000</span>
-             <p className="text-text-muted text-sm">Runner Up Prize</p>
-          </div>
-          <div className="bg-bg-elevated border-2 border-accent-orange p-12 text-center relative pt-24 md:scale-110 md:z-10">
-             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 border-2 border-accent-orange bg-bg-base flex items-center justify-center font-orbitron text-5xl text-accent-orange animate-glow-pulse">1</div>
-             <h3 className="text-3xl font-rajdhani mb-2">GOLD</h3>
-             <span className="text-4xl font-orbitron text-text-primary block mb-4">₹25,000</span>
-             <p className="text-text-muted text-sm uppercase tracking-widest font-bold">Grand Champion</p>
-          </div>
-          <div className="bg-bg-surface border border-custom-border p-10 text-center relative pt-20">
-             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 border border-accent-amber/50 bg-bg-base flex items-center justify-center font-orbitron text-4xl text-accent-amber/50">3</div>
-             <h3 className="text-2xl font-rajdhani mb-2">BRONZE</h3>
-             <span className="text-3xl font-orbitron text-text-primary block mb-4">₹10,000</span>
-             <p className="text-text-muted text-sm">Third Place Award</p>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <Link to="/prizes" className="text-accent-orange font-rajdhani uppercase tracking-badge flex items-center justify-center hover:translate-x-2 transition-transform">
-             View All Prizes <HiArrowRight className="ml-2" />
-          </Link>
         </div>
       </section>
     </motion.div>

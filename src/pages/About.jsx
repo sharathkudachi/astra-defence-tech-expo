@@ -96,7 +96,7 @@ const About = () => {
           <span className="label-badge text-accent-amber mb-4 block">The Organization</span>
           <h2 className="text-4xl md:text-5xl font-orbitron mb-4">ASTRA CLUB</h2>
           <p className="font-rajdhani text-xl text-text-primary tracking-widest uppercase">
-            Armed Squadron for Tactical Readiness and Awareness
+            Armed Squad for Tactical Readiness and Awareness
           </p>
         </motion.div>
 
