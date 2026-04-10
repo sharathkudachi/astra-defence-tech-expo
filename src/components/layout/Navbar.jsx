@@ -65,26 +65,17 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="/defence_expo_brochure (1).html"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/ASTRA DEFENCE TECH EXPO'26 BROCHURE.pdf"
+            download="ASTRA DEFENCE TECH EXPO'26 BROCHURE.pdf"
             className="px-6 py-2 border border-accent-orange text-accent-orange font-orbitron text-xs tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all duration-300"
           >
             Brochure
-          </a>
-          <a
-            href="https://forms.gle/rD5pU7kcRHF9V3dh8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 border border-accent-orange/60 text-accent-orange font-orbitron text-xs tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all duration-300"
-          >
-            Registration Link
           </a>
           <Link
             to="/register"
             className="px-6 py-2 border border-accent-orange text-accent-orange font-orbitron text-xs tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all duration-300"
           >
-            Register on Unstop
+            Register on unstop
           </Link>
         </div>
 

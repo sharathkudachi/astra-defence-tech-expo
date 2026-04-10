@@ -92,8 +92,8 @@ const Contact = () => {
             </div>
             <div className="divide-y divide-custom-border">
               {[
-                { name: "Arshad Alam", phones: ["+91 82355 19094"] },
-                { name: "Aditya Rai", phones: ["+91 96530 31551"] },
+                { name: "Arshad Alam  ", phones: ["+91 82355 19094"] },
+                { name: "Prarthana Dilip ", phones: ["+91 97314 37403"] },
               ].map((contact, i) => (
                 <div key={i} className="flex items-center justify-between px-6 py-4 group hover:bg-accent-orange/5 transition-colors">
                   <span className="font-rajdhani text-text-primary uppercase tracking-badge text-sm">{contact.name}</span>

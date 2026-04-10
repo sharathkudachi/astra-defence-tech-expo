@@ -5,7 +5,7 @@ import { HiExternalLink, HiCheckCircle } from 'react-icons/hi';
 const Register = () => {
   const checklist = [
     "Competition is open to students only",
-    "Maximum 4 members per team (1 leader + 3)",
+    "Maximum 5 members per team (1 leader + 4)",
     "One submission per team — duplicates will be rejected",
     "Have your PPT, Video Demo, and Problem Statement ready before registering",
     "Ensure all team member details are accurate"
@@ -59,7 +59,7 @@ const Register = () => {
       <div className="text-center">
         <div className="inline-block border border-accent-amber/30 bg-accent-amber/5 px-6 py-3">
           <p className="text-accent-amber font-rajdhani text-sm uppercase tracking-[0.2em] font-bold">
-            Registration deadline: 10:00 AM · 30 April 2026
+            Registration deadline: 10:00 AM · 25 April 2026
           </p>
         </div>
       </div>

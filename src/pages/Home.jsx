@@ -73,7 +73,7 @@ const Home = () => {
         </motion.h2>
 
         <motion.div variants={itemVariants} className="mb-10">
-          <span className="text-2xl md:text-3xl font-orbitron text-accent-amber tracking-widest">30 APR 2026</span>
+          <span className="text-2xl md:text-3xl font-orbitron text-accent-amber tracking-widest">30 APR 2026 · BMSIT&M, Bengaluru</span>
         </motion.div>
 
         <motion.div variants={itemVariants} className="mb-12">
@@ -85,23 +85,14 @@ const Home = () => {
             to="/register" 
             className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
-            Register on Unstop
+            Register on unstop
           </Link>
           <a
-            href="/defence_expo_brochure (1).html"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/ASTRA DEFENCE TECH EXPO'26 BROCHURE.pdf"
+            download="ASTRA DEFENCE TECH EXPO'26 BROCHURE.pdf"
             className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
             Download Brochure
-          </a>
-          <a
-            href="https://forms.gle/rD5pU7kcRHF9V3dh8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
-          >
-            Registration Link
           </a>
           <Link 
             to="/event" 
@@ -111,10 +102,6 @@ const Home = () => {
           </Link>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mt-16 flex items-center text-text-muted font-rajdhani tracking-widest uppercase">
-          <HiLocationMarker className="text-accent-orange mr-2 text-xl" />
-          <span>30 April 2026 · BMSIT&M, Bengaluru</span>
-        </motion.div>
       </section>
 
       {/* Prize Pool Bar */}
