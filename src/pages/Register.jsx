@@ -44,14 +44,24 @@ const Register = () => {
 
         <div className="pt-8 border-t border-custom-border space-y-4">
           <motion.a
-            href="https://forms.gle/Qa9DwxSfUNCutig68"
+            href="https://unstop.com/o/MTlI1zJ"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="w-full bg-accent-orange text-bg-base py-5 px-8 font-orbitron text-xl font-bold tracking-widest uppercase flex items-center justify-center animate-glow-pulse"
           >
-            Register Now <HiExternalLink className="ml-3 text-2xl" />
+            Register on Unstop <HiExternalLink className="ml-3 text-2xl" />
+          </motion.a>
+          <motion.a
+            href="https://forms.gle/Qa9DwxSfUNCutig68"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full border border-accent-orange text-accent-orange py-5 px-8 font-orbitron text-xl font-bold tracking-widest uppercase flex items-center justify-center hover:bg-accent-orange hover:text-bg-base transition-all"
+          >
+            Register on Google Form <HiExternalLink className="ml-3 text-2xl" />
           </motion.a>
           <p className="text-accent-amber font-rajdhani text-sm text-center tracking-wide pt-2">
             Note: The registration on Unstop has been temporarily disabled. Please use Google Form for registration.
