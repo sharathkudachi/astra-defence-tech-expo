@@ -85,7 +85,7 @@ const Home = () => {
             to="/register" 
             className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
-            Register on unstop
+            Register now
           </Link>
           <a
             href="/ASTRA DEFENCE TECH EXPO'26 BROCHURE.pdf"

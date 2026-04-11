@@ -75,7 +75,7 @@ const Navbar = () => {
             to="/register"
             className="px-6 py-2 border border-accent-orange text-accent-orange font-orbitron text-xs tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all duration-300"
           >
-            Register on unstop
+            Register now
           </Link>
         </div>
 

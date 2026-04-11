@@ -22,7 +22,7 @@ const Register = () => {
         <span className="label-badge text-accent-orange mb-4 block">Deployment Phase</span>
         <h1 className="text-4xl md:text-5xl font-orbitron mb-6">REGISTER YOUR TEAM</h1>
         <p className="text-text-muted text-lg font-inter leading-relaxed">
-          All registrations are handled exclusively via Unstop. Please ensure you have read the tactical briefing below before proceeding to the registration portal.
+           Please ensure you have read the tactical briefing below before proceeding to the registration portal.
         </p>
       </div>
 
@@ -42,17 +42,20 @@ const Register = () => {
           ))}
         </ul>
 
-        <div className="pt-8 border-t border-custom-border">
+        <div className="pt-8 border-t border-custom-border space-y-4">
           <motion.a
-            href="https://unstop.com/o/MTlI1zJ"
+            href="https://forms.gle/Qa9DwxSfUNCutig68"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="w-full bg-accent-orange text-bg-base py-5 px-8 font-orbitron text-xl font-bold tracking-widest uppercase flex items-center justify-center animate-glow-pulse"
           >
-            Register Now on Unstop <HiExternalLink className="ml-3 text-2xl" />
+            Register Now <HiExternalLink className="ml-3 text-2xl" />
           </motion.a>
+          <p className="text-accent-amber font-rajdhani text-sm text-center tracking-wide pt-2">
+            Note: The registration on Unstop has been temporarily disabled. Please use Google Form for registration.
+          </p>
         </div>
       </div>
 
