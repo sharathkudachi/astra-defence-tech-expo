@@ -71,6 +71,21 @@ const Footer = () => {
           <a href="#" className="label-badge text-[10px] text-text-muted hover:text-accent-orange transition-colors">Terms of Op</a>
         </div>
       </div>
+
+      {/* Sponsor Credit */}
+      <div className="mt-8 pt-8 border-t border-custom-border/30 text-center">
+        <div className="flex flex-col items-center space-y-4">
+          <span className="font-rajdhani text-[10px] tracking-[0.3em] text-text-muted uppercase">Official Systems Partner</span>
+          <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" className="group transition-all duration-300 transform hover:scale-105">
+            <img 
+              src="/sponsor1.png" 
+              alt="Devfolio" 
+              className="h-8 md:h-10 w-auto object-contain"
+              style={{ filter: 'drop-shadow(0 0 8px rgba(55, 112, 255, 0.2))' }}
+            />
+          </a>
+        </div>
+      </div>
     </footer>
   );
 };

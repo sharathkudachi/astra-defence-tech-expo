@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import SponsorsSection from './components/common/SponsorsSection';
 import ScrollToTop from './components/common/ScrollToTop';
 
 // Pages (to be implemented)
@@ -33,6 +34,7 @@ function App() {
             </Routes>
           </AnimatePresence>
         </main>
+        <SponsorsSection />
         <Footer />
         <ScrollToTop />
       </div>
