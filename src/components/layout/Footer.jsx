@@ -78,9 +78,9 @@ const Footer = () => {
           <span className="font-rajdhani text-[10px] tracking-[0.3em] text-text-muted uppercase">Official Systems Partner</span>
           <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" className="group transition-all duration-300 transform hover:scale-105">
             <img 
-              src="/sponsor1.png" 
+              src="https://raw.githubusercontent.com/devfolioco/brand-assets/main/Logo%20%2B%20Text%20-%20White/Devfolio%20-%20White.png" 
               alt="Devfolio" 
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-14 md:h-20 w-auto object-contain"
               style={{ filter: 'drop-shadow(0 0 8px rgba(55, 112, 255, 0.2))' }}
             />
           </a>

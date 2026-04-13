@@ -42,8 +42,18 @@ const Register = () => {
           ))}
         </ul>
 
-        <div className="pt-8 border-t border-custom-border space-y-4">
-          <motion.a
+        <div className="pt-8 border-t border-custom-border space-y-6">
+          <div className="flex flex-col items-center mb-4">
+            <div 
+              className="apply-button" 
+              data-hackathon-slug="astra-tech-expo" 
+              data-applynow-style="light"
+              style={{ height: '44px', width: '312px' }}
+            ></div>
+          </div>
+
+          <div className="flex flex-col space-y-4 w-full">
+            <motion.a
             href="https://unstop.com/o/MTlI1zJ"
             target="_blank"
             rel="noopener noreferrer"
@@ -68,6 +78,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+    </div>
 
       <div className="text-center">
         <div className="inline-block border border-accent-amber/30 bg-accent-amber/5 px-6 py-3">

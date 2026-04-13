@@ -12,9 +12,9 @@ const SponsorsSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <span className="label-badge text-[#3770FF] mb-4 block">Event Partnerships</span>
+          <span className="label-badge text-brand-devfolio mb-4 block">Event Partnerships</span>
           <h2 className="text-4xl md:text-5xl font-orbitron tracking-tactical">OUR SPONSORS</h2>
-          <div className="w-24 h-1 bg-[#3770FF] mx-auto mt-6" />
+          <div className="w-24 h-1 bg-brand-devfolio mx-auto mt-6" />
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
@@ -24,13 +24,13 @@ const SponsorsSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             whileHover={{ y: -10 }}
-            className="relative p-12 bg-bg-elevated border border-[#3770FF]/20 group transition-all duration-500"
+            className="relative p-12 bg-bg-elevated border border-brand-devfolio/20 group transition-all duration-500"
           >
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#3770FF]" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#3770FF]" />
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-brand-devfolio" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-brand-devfolio" />
             
             <div className="flex flex-col items-center">
-              <span className="font-rajdhani text-xs tracking-badge text-[#3770FF] uppercase mb-8">
+              <span className="font-rajdhani text-xs tracking-badge text-brand-devfolio uppercase mb-8">
                 Official systems partner
               </span>
               
@@ -42,9 +42,9 @@ const SponsorsSection = () => {
               >
                 <div className="absolute -inset-4 bg-white/5 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img 
-                  src="/sponsor1.png" 
+                  src="https://raw.githubusercontent.com/devfolioco/brand-assets/main/Logo%20%2B%20Text%20-%20White/Devfolio%20-%20White.png" 
                   alt="Devfolio" 
-                  className="h-16 md:h-24 w-auto object-contain relative z-10"
+                  className="h-24 md:h-40 w-auto object-contain relative z-10"
                   style={{ filter: 'drop-shadow(0 0 10px rgba(55, 112, 255, 0.3))' }}
                 />
               </a>
@@ -68,8 +68,8 @@ const SponsorsSection = () => {
       </div>
 
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#3770FF]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#3770FF]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-devfolio/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-devfolio/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
     </section>
   );
 };
