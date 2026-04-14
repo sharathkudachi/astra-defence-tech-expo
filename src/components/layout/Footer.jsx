@@ -32,6 +32,7 @@ const Footer = () => {
             </ul>
             <ul className="space-y-3">
               <li><Link to="/guests" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Chief Guests</Link></li>
+              <li><Link to="/sponsorship" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Sponsorship</Link></li>
               <li><Link to="/contact" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Contact</Link></li>
               <li><Link to="/register" className="text-text-muted hover:text-accent-orange text-sm transition-colors font-rajdhani uppercase">Register</Link></li>
             </ul>
@@ -72,20 +73,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Sponsor Credit */}
-      <div className="mt-8 pt-8 border-t border-custom-border/30 text-center">
-        <div className="flex flex-col items-center space-y-4">
-          <span className="font-rajdhani text-[10px] tracking-[0.3em] text-text-muted uppercase">Official Systems Partner</span>
-          <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" className="group transition-all duration-300 transform hover:scale-105">
-            <img 
-              src="https://raw.githubusercontent.com/devfolioco/brand-assets/main/Logo%20%2B%20Text%20-%20White/Devfolio%20-%20White.png" 
-              alt="Devfolio" 
-              className="h-14 md:h-20 w-auto object-contain"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(55, 112, 255, 0.2))' }}
-            />
-          </a>
-        </div>
-      </div>
     </footer>
   );
 };

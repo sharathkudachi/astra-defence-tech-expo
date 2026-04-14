@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import SponsorsSection from './components/common/SponsorsSection';
 import ScrollToTop from './components/common/ScrollToTop';
 
 // Pages (to be implemented)
@@ -14,6 +13,7 @@ import Schedule from './pages/Schedule';
 import Guests from './pages/Guests';
 import Register from './pages/Register';
 import Contact from './pages/Contact';
+import Sponsorship from './pages/Sponsorship';
 
 function App() {
   return (
@@ -31,10 +31,10 @@ function App() {
               <Route path="/guests" element={<Guests />} />
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/sponsorship" element={<Sponsorship />} />
             </Routes>
           </AnimatePresence>
         </main>
-        <SponsorsSection />
         <Footer />
         <ScrollToTop />
       </div>
