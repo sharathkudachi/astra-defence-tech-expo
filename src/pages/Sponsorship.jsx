@@ -29,7 +29,13 @@ const sponsorTiers = [
   {
     tier: "Silver Sponsors",
     slots: 4,
-    sponsors: []
+    sponsors: [
+      {
+        name: "Xcel Consolidator Services (I) Pvt Ltd",
+        logo: "/sponsor2.png",
+        link: "#"
+      }
+    ]
   },
   {
     tier: "Technology Partner",
@@ -58,22 +64,23 @@ const SponsorCard = ({ sponsor, isMain = false }) => (
     href={sponsor.link}
     target="_blank"
     rel="noopener noreferrer"
-    whileHover={{ y: -5, scale: 1.02 }}
-    className={`relative flex flex-col items-center justify-center p-8 bg-bg-surface border border-custom-border transition-all duration-300 hover:border-accent-orange/30 group ${isMain ? 'backdrop-blur-sm' : ''}`}
+    whileHover={{ y: -5, scale: 1.05 }}
+    className={`relative flex flex-col items-center justify-center p-6 bg-bg-surface border border-custom-border transition-all duration-300 hover:border-accent-orange/30 group ${isMain ? 'backdrop-blur-sm' : ''} min-h-[200px]`}
   >
-    <div className={`relative z-10 w-full flex flex-col items-center justify-center ${!isMain ? 'grayscale hover:grayscale-0' : ''} transition-all duration-500`}>
-      <img
-        src={sponsor.logo}
-        alt={sponsor.name}
-        className={`${isMain ? 'h-24 md:h-32' : 'h-16'} w-auto object-contain mb-4`}
-      />
-      {isMain && (
-        <h3 className="font-orbitron text-xl text-bg-base mt-4 tracking-widest">{sponsor.name}</h3>
-      )}
+    <div className="relative z-10 w-full h-full flex flex-col items-center justify-center transition-all duration-500">
+      <div className="w-full flex-1 flex items-center justify-center overflow-hidden">
+        <img
+          src={sponsor.logo}
+          alt={sponsor.name}
+          className={`${isMain ? 'h-24 md:h-32' : 'max-h-20 md:max-h-24'} w-full object-contain`}
+          onError={(e) => { e.target.style.display = 'none'; }}
+        />
+      </div>
+      <h3 className={`font-orbitron tracking-widest text-center ${isMain ? 'text-xl text-bg-base mt-6' : 'text-[10px] md:text-[11px] text-text-muted mt-4 uppercase leading-relaxed max-w-[180px]'}`}>
+        {sponsor.name}
+      </h3>
     </div>
-    {!isMain && (
-      <div className="absolute inset-0 bg-accent-orange/0 group-hover:bg-accent-orange/[0.02] transition-colors pointer-events-none" />
-    )}
+    <div className="absolute inset-0 bg-accent-orange/0 group-hover:bg-accent-orange/[0.02] transition-colors pointer-events-none" />
   </motion.a>
 );
 
