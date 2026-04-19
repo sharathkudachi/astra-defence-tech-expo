@@ -154,27 +154,58 @@ const Home = () => {
             <span className="label-badge text-accent-amber mb-4 block">Official Delegates</span>
             <h2 className="text-4xl font-orbitron">CHIEF GUESTS & SPEAKERS</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
-            {[0, 1].map((i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.03 }}
-                className="relative border border-accent-orange/40 bg-bg-surface overflow-hidden group"
-                style={{ boxShadow: '0 0 20px rgba(255,107,0,0.08)' }}
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.05)_0%,transparent_70%)] animate-pulse pointer-events-none" />
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-accent-orange" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-accent-orange" />
-                <div className="aspect-square flex flex-col items-center justify-center p-10 text-center">
-                  <div className="w-24 h-24 rounded-full border-2 border-accent-orange/50 flex items-center justify-center mb-6 relative">
-                    <span className="absolute inset-0 rounded-full border border-accent-orange/30 animate-ping" />
-                    <span className="text-5xl font-orbitron text-accent-orange/60">?</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            {/* Chief Guest - Revealed */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative border border-accent-orange/40 bg-bg-surface overflow-hidden group h-full"
+              style={{ boxShadow: '0 0 20px rgba(255,107,0,0.08)' }}
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.05)_0%,transparent_70%)] animate-pulse pointer-events-none" />
+              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-accent-orange" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-accent-orange" />
+              <div className="flex flex-col h-full">
+                <div className="aspect-[4/5] relative overflow-hidden">
+                  <img 
+                    src="/guest1.1.jpeg" 
+                    alt="Brigadier B. M. Cariappa" 
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-base/90 via-bg-base/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-left">
+                    <span className="label-badge text-accent-orange text-[10px] mb-2 block">Chief Guest Confirmed</span>
                   </div>
-                  <p className="font-orbitron text-accent-orange tracking-widest text-sm animate-pulse">Revealing Soon...</p>
-                  <p className="text-text-muted text-xs font-rajdhani uppercase tracking-badge mt-2">Identity Classified</p>
                 </div>
-              </motion.div>
-            ))}
+                <div className="p-6 text-center">
+                  <h3 className="font-orbitron text-text-primary text-base tracking-widest leading-tight mb-2">
+                    Brigadier B. M. Cariappa, <br/> VrC, SM (Retd.)
+                  </h3>
+                  <p className="text-accent-amber text-[10px] font-rajdhani uppercase tracking-badge">
+                    Kargil War Veteran · Vir Chakra Awardee
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Guest Speaker - Still Classified */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative border border-accent-orange/40 bg-bg-surface overflow-hidden group h-full"
+              style={{ boxShadow: '0 0 20px rgba(255,107,0,0.08)' }}
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.05)_0%,transparent_70%)] animate-pulse pointer-events-none" />
+              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-accent-orange" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-accent-orange" />
+              <div className="aspect-[4/5] flex flex-col items-center justify-center p-10 text-center">
+                <div className="w-24 h-24 rounded-full border-2 border-accent-orange/50 flex items-center justify-center mb-6 relative">
+                  <span className="absolute inset-0 rounded-full border border-accent-orange/30 animate-ping" />
+                  <span className="text-5xl font-orbitron text-accent-orange/60">?</span>
+                </div>
+                <span className="label-badge text-accent-orange/80 text-[10px] mb-3 block">Guest Speaker</span>
+                <p className="font-orbitron text-accent-orange tracking-widest text-sm animate-pulse">Revealing Soon...</p>
+                <p className="text-text-muted text-xs font-rajdhani uppercase tracking-badge mt-2">Identity Classified</p>
+              </div>
+            </motion.div>
           </div>
           <div className="text-center mt-10">
             <Link to="/guests" className="flex items-center justify-center text-accent-orange font-rajdhani uppercase tracking-badge group">
