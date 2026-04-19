@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { HiMail, HiLocationMarker, HiCalendar, HiExternalLink } from 'react-icons/hi';
 import { FaInstagram, FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
 const Contact = () => {
   const [mapType, setMapType] = useState('roadmap');
+  const location = useLocation();
+  const [highlighted, setHighlighted] = useState(false);
+
+  useEffect(() => {
+    if (location.hash === '#partner-contact') {
+      setHighlighted(true);
+      const element = document.getElementById('partner-contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      
+      // Remove highlight after a few seconds
+      const timer = setTimeout(() => {
+        setHighlighted(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
+
   const contactInfo = [
     {
       icon: <HiMail className="text-3xl text-accent-orange" />,
@@ -44,12 +64,21 @@ const Contact = () => {
         <div className="h-1 w-24 bg-accent-orange mx-auto" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start">
+      <div id="partner-contact" className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start">
         {/* Left Column - Contact Details */}
         <div className="space-y-12">
           {contactInfo.map((info, idx) => (
-            <div key={idx} className="flex items-start space-x-6 group">
-              <div className="w-16 h-16 border border-custom-border bg-bg-surface flex items-center justify-center group-hover:border-accent-orange transition-colors">
+            <motion.div 
+              key={idx} 
+              animate={highlighted && info.label === "MAIL ID" ? { 
+                scale: [1, 1.05, 1],
+                borderColor: ['#2A2A2A', '#FF6B00', '#2A2A2A'],
+                boxShadow: ['0 0 0px rgba(255,107,0,0)', '0 0 20px rgba(255,107,0,0.3)', '0 0 0px rgba(255,107,0,0)']
+              } : {}}
+              transition={{ duration: 2, repeat: 2 }}
+              className={`flex items-start space-x-6 group p-2 rounded-lg transition-all ${highlighted && info.label === "MAIL ID" ? 'bg-accent-orange/5' : ''}`}
+            >
+              <div className={`w-16 h-16 border ${highlighted && info.label === "MAIL ID" ? 'border-accent-orange' : 'border-custom-border'} bg-bg-surface flex items-center justify-center group-hover:border-accent-orange transition-colors`}>
                 {info.icon}
               </div>
               <div className="flex-1">
@@ -64,7 +93,7 @@ const Contact = () => {
                   </span>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
 
           <div className="pt-8 border-t border-custom-border">
@@ -84,7 +113,14 @@ const Contact = () => {
           </div>
 
           {/* Contact Numbers */}
-          <div className="border border-accent-orange/30 bg-bg-surface relative overflow-hidden">
+          <motion.div 
+            animate={highlighted ? { 
+              scale: [1, 1.02, 1],
+              boxShadow: ['0 0 0px rgba(255,107,0,0)', '0 0 30px rgba(255,107,0,0.2)', '0 0 0px rgba(255,107,0,0)']
+            } : {}}
+            transition={{ duration: 2, repeat: 2 }}
+            className={`border ${highlighted ? 'border-accent-orange' : 'border-accent-orange/30'} bg-bg-surface relative overflow-hidden`}
+          >
             <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-accent-orange" />
             <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-accent-orange" />
             <div className="px-6 py-4 border-b border-custom-border">
@@ -107,7 +143,7 @@ const Contact = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Column - Navigation Hub */}

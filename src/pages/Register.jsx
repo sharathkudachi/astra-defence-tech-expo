@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiExternalLink, HiCheckCircle } from 'react-icons/hi';
 
@@ -10,6 +10,17 @@ const Register = () => {
     "Have your PPT, Video Demo, and Problem Statement ready before registering",
     "Ensure all team member details are accurate"
   ];
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
 
   return (
     <motion.div
@@ -47,7 +58,7 @@ const Register = () => {
             <div 
               className="apply-button" 
               data-hackathon-slug="astra-tech-expo" 
-              data-applynow-style="light"
+              data-button-theme="light"
               style={{ height: '44px', width: '312px' }}
             ></div>
           </div>
