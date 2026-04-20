@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import { HiArrowRight, HiLocationMarker } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import CountdownTimer from '../components/common/CountdownTimer';
-import { 
-  GiRobotLeg, 
-  GiArtificialIntelligence, 
-  GiLockSpy, 
-  GiCctvCamera, 
-  GiProcessor, 
-  GiRadarSweep, 
-  GiDeliveryDrone 
+import {
+  GiRobotLeg,
+  GiArtificialIntelligence,
+  GiLockSpy,
+  GiCctvCamera,
+  GiProcessor,
+  GiRadarSweep,
+  GiDeliveryDrone
 } from 'react-icons/gi';
 
 const Home = () => {
@@ -44,7 +44,7 @@ const Home = () => {
   ];
 
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       animate="visible"
       exit={{ opacity: 0 }}
@@ -58,15 +58,15 @@ const Home = () => {
           </span>
         </motion.div>
 
-        <motion.h1 
-          variants={itemVariants} 
+        <motion.h1
+          variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-orbitron font-black text-text-primary tracking-tactical mb-2 leading-none"
         >
           DEFENCE TECHNOLOGY
         </motion.h1>
 
-        <motion.h2 
-          variants={itemVariants} 
+        <motion.h2
+          variants={itemVariants}
           className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-orbitron font-black text-accent-orange mb-4 tracking-tighter"
         >
           EXPO 2026
@@ -81,8 +81,8 @@ const Home = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-          <Link 
-            to="/register" 
+          <Link
+            to="/register"
             className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
             Register now
@@ -94,8 +94,8 @@ const Home = () => {
           >
             Download Brochure
           </a>
-          <Link 
-            to="/event" 
+          <Link
+            to="/event"
             className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
             Explore the Expo
@@ -166,19 +166,19 @@ const Home = () => {
               <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-accent-orange" />
               <div className="flex flex-col h-full">
                 <div className="aspect-[4/5] relative overflow-hidden">
-                  <img 
-                    src="/guest1.1.jpeg" 
-                    alt="Brigadier B. M. Cariappa" 
+                  <img
+                    src="/guest1.1.jpeg"
+                    alt="Brigadier B. M. Cariappa"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-base/90 via-bg-base/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 text-left">
-                    <span className="label-badge text-accent-orange text-[10px] mb-2 block">Chief Guest Confirmed</span>
+                    <span className="label-badge text-accent-orange text-[10px] mb-2 block">Chief Guest </span>
                   </div>
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="font-orbitron text-text-primary text-base tracking-widest leading-tight mb-2">
-                    Brigadier B. M. Cariappa, <br/> VrC, SM (Retd.)
+                    Brigadier B. M. Cariappa, <br /> VrC, SM (Retd.)
                   </h3>
                   <p className="text-accent-amber text-[10px] font-rajdhani uppercase tracking-badge">
                     Kargil War Veteran · Vir Chakra Awardee
