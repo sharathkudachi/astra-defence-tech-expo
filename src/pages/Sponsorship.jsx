@@ -34,6 +34,11 @@ const sponsorTiers = [
         name: "Xcel Consolidator Services (I) Pvt Ltd",
         logo: "/sponsor2.png",
         link: "#"
+      },
+      {
+        name: "BHAGAVAN REALTORS",
+        logo: "/sponsor3.png",
+        link: "https://www.bhagavanrealtors.com/about-us.htm"
       }
     ]
   },
