@@ -95,10 +95,16 @@ const Sponsorship = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
       exit={{ opacity: 0 }}
-      className="min-h-screen pb-20"
+      className="min-h-screen pb-20 mt-20"
+      id="sponsors"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+      }}
     >
       {/* Header */}
       <div className="container mx-auto px-6 pt-16 pb-20 text-center">

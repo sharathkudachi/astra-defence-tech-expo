@@ -55,7 +55,7 @@ const SponsorsSection = () => {
             </div>
           </motion.div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-1000">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-1000">
             {/* Placeholders for future sponsors if needed, or just leave as is */}
             <div className="p-8 border border-custom-border border-dashed flex items-center justify-center">
               <span className="font-orbitron text-sm tracking-widest text-text-muted/50">Partnership Spot Available</span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiMail, HiLocationMarker } from 'react-icons/hi';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -18,6 +19,26 @@ const Footer = () => {
           <p className="text-text-muted text-sm leading-relaxed max-w-xs font-inter">
             BMS Institute of Technology and Management's premier club for tactical readiness and awareness. Empowering students through defence innovation.
           </p>
+          <div className="flex space-x-4 pt-2">
+            <a 
+              href="https://www.instagram.com/astra.club.bmsit/" 
+              className="w-10 h-10 border border-accent-orange/20 flex items-center justify-center text-text-muted hover:text-accent-orange hover:border-accent-orange transition-all rounded-full bg-bg-base/50"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="text-lg" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/110203875/" 
+              className="w-10 h-10 border border-accent-orange/20 flex items-center justify-center text-text-muted hover:text-accent-orange hover:border-accent-orange transition-all rounded-full bg-bg-base/50"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="text-lg" />
+            </a>
+          </div>
         </div>
 
         {/* Col 2: Quick Links */}

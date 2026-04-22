@@ -16,10 +16,12 @@ const Schedule = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
       exit={{ opacity: 0 }}
       className="container mx-auto px-6 py-20"
+      id="schedule"
     >
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-orbitron mb-8">EVENT SCHEDULE</h1>

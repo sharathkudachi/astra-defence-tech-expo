@@ -139,10 +139,12 @@ const GuestCard = ({ label, revealed = false }) => (
 const Guests = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
       exit={{ opacity: 0 }}
       className="container mx-auto px-6 py-20"
+      id="guests"
     >
       <div className="text-center mb-20">
         <span className="label-badge text-accent-orange mb-4 block">Official Delegates</span>

@@ -46,17 +46,19 @@ const Contact = () => {
   ];
 
   const socials = [
-    { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/astra.club.bmsit?igsh=MXI5dm44Nmc1cm90MQ==" },
-    { icon: <FaLinkedin />, label: "LinkedIn", href: "https://www.linkedin.com/company/astra-club-bmsit/" },
+    { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/astra.club.bmsit/" },
+    { icon: <FaLinkedin />, label: "LinkedIn", href: "https://www.linkedin.com/company/110203875/" },
     { icon: <FaWhatsapp />, label: "Whatsapp", href: "https://chat.whatsapp.com/Gql6zNG43NZ1By19sARbC5" },
   ];
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
       exit={{ opacity: 0 }}
       className="container mx-auto px-6 py-20"
+      id="contact"
     >
       <div className="text-center mb-16">
         <span className="label-badge text-accent-orange mb-4 block">Communication Channels</span>
