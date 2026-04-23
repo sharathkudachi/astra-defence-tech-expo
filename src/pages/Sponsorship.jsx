@@ -24,7 +24,13 @@ const sponsorTiers = [
   {
     tier: "Associate Sponsors",
     slots: 3,
-    sponsors: []
+    sponsors: [
+      {
+        name: "InnoCoat Systems",
+        logo: "/sponsor1.jpeg",
+        link: "https://innocoatsystems.com/contact.html"
+      }
+    ]
   },
   {
     tier: "Silver Sponsors",
