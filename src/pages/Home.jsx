@@ -74,8 +74,8 @@ const Home = () => {
             Register now
           </button>
           <a
-            href="/ASTRA DEFNCE TECH EXPO'26 BROCHURE (1).pdf"
-            download="ASTRA DEFNCE TECH EXPO'26 BROCHURE (1).pdf"
+            href="/brochure.pdf"
+            download="brochure.pdf"
             className="px-10 py-4 border border-accent-orange text-accent-orange font-orbitron font-bold tracking-tactical uppercase hover:bg-accent-orange hover:text-bg-base transition-all"
           >
             Download Brochure

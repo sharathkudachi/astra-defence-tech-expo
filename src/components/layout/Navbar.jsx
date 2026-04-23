@@ -103,8 +103,8 @@ const Navbar = () => {
         {/* Right: Action Buttons */}
         <div className="hidden xl:flex items-center space-x-3 shrink-0">
           <a
-            href="/ASTRA DEFNCE TECH EXPO'26 BROCHURE (1).pdf"
-            download
+            href="/brochure.pdf"
+            download="brochure.pdf"
             className="px-4 py-2 border border-accent-orange/40 text-accent-orange font-orbitron text-[10px] font-black tracking-widest hover:bg-accent-orange/10 transition-all rounded-full"
           >
             BROCHURE
@@ -156,8 +156,8 @@ const Navbar = () => {
               
               <div className="flex flex-col space-y-4 pt-6 w-full">
                 <a
-                  href="/ASTRA DEFNCE TECH EXPO'26 BROCHURE (1).pdf"
-                  download
+                  href="/brochure.pdf"
+                  download="brochure.pdf"
                   className="w-full py-4 border border-accent-orange/40 text-accent-orange font-orbitron text-sm font-black text-center rounded-xl"
                 >
                   BROCHURE
