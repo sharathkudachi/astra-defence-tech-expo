@@ -197,7 +197,7 @@ const About = () => {
               <h3 className="font-orbitron text-xl text-text-primary tracking-widest">INDUSTRY & EXPOSURE</h3>
             </div>
             <p className="text-text-muted font-inter leading-relaxed">
-              ASTRA actively works towards connecting students with the defence ecosystem by exploring collaborations with organizations such as <span className="text-text-primary font-bold">DRDO, HAL, and BEL</span>, providing insights into real-world defence production and research environments.
+              ASTRA actively works towards connecting students with the defence ecosystem by exploring collaborations with organizations such as <span className="text-text-primary font-bold">DRDO and BEL</span>, providing insights into real-world defence production and research environments.
             </p>
           </motion.div>
         </div>

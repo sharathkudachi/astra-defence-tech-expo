@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   GiRobotLeg, 
   GiArtificialIntelligence, 
@@ -11,8 +11,25 @@ import {
   GiCheckMark,
   GiShield
 } from 'react-icons/gi';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const Event = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const sappersImages = [
+    "/sappiers1.webp",
+    "/sappiers2.webp",
+    "/sappiers3.webp",
+    "/sappiers4.webp",
+    "/sappiers5.webp"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % sappersImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   const domains = [
     { title: "Robotics & Autonomous Systems in Defence Technology", icon: <GiRobotLeg />, desc: "UGVs, rescue robots, and automated surveillance systems. Emphasis on navigation in unstructured environments and task automation." },
     { title: "AI & Machine Learning in Defence Technology", icon: <GiArtificialIntelligence />, desc: "Predictive analytics, target recognition, and intelligent command systems. Using data to stay three steps ahead of the adversary." },
@@ -49,7 +66,6 @@ const Event = () => {
 
   const evaluators = [
     { acronym: "DRDO", full: "Defence Research & Development Org", role: "Weapon systems & strategic hardware" },
-    { acronym: "HAL", full: "Hindustan Aeronautics Limited", role: "Aerial platforms & avionics" },
     { acronym: "BEL", full: "Bharat Electronics Limited", role: "Radar & communication systems" },
     { acronym: "BDL", full: "Bharat Dynamics Limited", role: "Guided missiles & munitions" }
   ];
@@ -92,42 +108,88 @@ const Event = () => {
         </div>
       </section>
 
-      {/* Callout Split */}
+      {/* Special Feature: Madras Sappers */}
       <section className="mb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="border-2 border-accent-orange bg-bg-surface p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <GiShield className="text-8xl" />
-            </div>
-            <h3 className="text-3xl font-orbitron text-accent-orange mb-4 uppercase">Student Competition</h3>
-            <p className="text-text-muted mb-6 leading-relaxed">
-              Exclusively for students from engineering institutions. Compete for major prizes and receive evaluation from experts.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-orange mr-2" /> Open to Students Only</li>
-              <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-orange mr-2" /> Prize Eligibility</li>
-              <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-orange mr-2" /> Expert Mentorship</li>
-            </ul>
+        <div className="border border-accent-orange/50 bg-bg-surface p-8 md:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(255,107,0,0.05)]">
+          <div className="absolute top-0 right-0 p-4 opacity-5">
+            <GiShield className="text-[200px] text-accent-orange translate-x-20 -translate-y-20" />
           </div>
-          <div className="border border-accent-amber/50 bg-bg-surface p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <GiShield className="text-8xl text-accent-amber" />
+          
+          <div className="flex flex-col lg:flex-row gap-12 items-start relative z-10">
+            <div className="w-full lg:w-1/2">
+              <span className="label-badge text-accent-orange mb-4 inline-block">Special Combat Engineering Display</span>
+              <h3 className="text-3xl md:text-4xl font-orbitron text-text-primary mb-8 uppercase tracking-widest leading-tight">
+                Madras Sappers <br /><span className="text-accent-orange">(MEG & Centre)</span>
+              </h3>
+              
+              <div className="space-y-6 text-text-muted font-inter leading-relaxed text-sm md:text-base border-l-2 border-accent-orange/30 pl-6">
+                <p>
+                  The Madras Engineer Group (MEG & Centre), popularly known as the Madras Sappers, is one of the oldest and most distinguished regiments of the Indian Army’s Corps of Engineers. With a legacy that dates back to the 18th century, the Madras Sappers have played a critical role in shaping India’s military engineering capabilities across generations.
+                </p>
+                <p>
+                  Renowned for their expertise in combat engineering, infrastructure development, and battlefield support, the regiment has contributed significantly in areas such as mobility, counter-mobility, fortifications, and disaster response operations.
+                </p>
+                <p>
+                  At ASTRA Defence Tech Expo 2026, the Madras Sappers (MEG & Centre) will be showcasing a range of their engineering equipment, field technologies, and operational capabilities, offering participants a rare opportunity to witness real-world defence systems up close.
+                </p>
+                <p className="text-text-primary font-bold italic">
+                  Their presence bridges the gap between academic innovation and practical defence applications, giving students direct exposure to the technologies and systems used by the Indian Army.
+                </p>
+              </div>
             </div>
-            <h3 className="text-3xl font-orbitron text-accent-amber mb-4 uppercase">Industry Exhibition</h3>
-            <p className="text-text-muted mb-6 leading-relaxed">
-              Private companies and startups showcasing tactical solutions. Opportunity for stalls and live demonstrations of commercial defence products.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-amber mr-2" /> Display Only</li>
-              <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-amber mr-2" /> Non-Competitive</li>
-              <li className="flex items-center text-text-primary text-sm font-rajdhani uppercase"><GiCheckMark className="text-accent-amber mr-2" /> Networking Priority</li>
-            </ul>
+            
+            <div className="w-full lg:w-1/2">
+               <div className="relative group">
+                 <div className="aspect-[16/10] relative overflow-hidden border border-accent-orange/20 bg-black/40">
+                   <AnimatePresence mode="wait">
+                     <motion.img
+                       key={currentImage}
+                       src={sappersImages[currentImage]}
+                       initial={{ opacity: 0, x: 20 }}
+                       animate={{ opacity: 1, x: 0 }}
+                       exit={{ opacity: 0, x: -20 }}
+                       transition={{ duration: 0.5 }}
+                       className="w-full h-full object-cover"
+                     />
+                   </AnimatePresence>
+                   
+                   {/* Navigation Dots */}
+                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                     {sappersImages.map((_, idx) => (
+                       <button
+                         key={idx}
+                         onClick={() => setCurrentImage(idx)}
+                         className={`w-2 h-2 rounded-full transition-all ${
+                           currentImage === idx ? 'bg-accent-orange w-6' : 'bg-white/30 hover:bg-white/50'
+                         }`}
+                       />
+                     ))}
+                   </div>
+
+                   {/* Arrows */}
+                   <button 
+                     onClick={() => setCurrentImage((prev) => (prev - 1 + sappersImages.length) % sappersImages.length)}
+                     className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                   >
+                     <HiChevronLeft size={24} />
+                   </button>
+                   <button 
+                     onClick={() => setCurrentImage((prev) => (prev + 1) % sappersImages.length)}
+                     className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                   >
+                     <HiChevronRight size={24} />
+                   </button>
+                 </div>
+               </div>
+               
+               <div className="mt-8 p-6 bg-accent-orange/5 border border-accent-orange/20">
+                  <p className="font-orbitron text-[10px] tracking-widest text-accent-orange uppercase mb-2">Operational Status</p>
+                  <p className="text-text-primary font-rajdhani text-sm uppercase font-bold tracking-widest">
+                    Live Display · Equipment Showcase · Interactive Session
+                  </p>
+               </div>
+            </div>
           </div>
-        </div>
-        <div className="mt-8 bg-bg-elevated p-4 border border-accent-amber/30 text-center">
-            <p className="text-accent-amber font-orbitron text-xs tracking-[0.15em] uppercase">
-              Important: Companies are present for exhibition purposes only. The competition is exclusively for students.
-            </p>
         </div>
       </section>
 

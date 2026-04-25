@@ -121,7 +121,7 @@ const Prizes = () => {
               <div className="flex items-start space-x-5">
                 <div className="w-2 h-2 bg-accent-orange mt-2 flex-shrink-0 animate-pulse" />
                 <p className="text-text-primary font-rajdhani uppercase tracking-[0.1em] text-sm font-bold leading-relaxed">
-                  Shortlisted teams gain direct exposure to DRDO, HAL, BEL, and BDL experts for potential mentorship.
+                  Shortlisted teams gain direct exposure to DRDO, BEL, and BDL experts for potential mentorship.
                 </p>
               </div>
             </div>

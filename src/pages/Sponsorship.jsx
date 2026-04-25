@@ -17,13 +17,7 @@ const sponsorTiers = [
     ]
   },
   {
-    tier: "Co-Powered By",
-    slots: 2,
-    sponsors: []
-  },
-  {
     tier: "Associate Sponsors",
-    slots: 3,
     sponsors: [
       {
         name: "InnoCoat Systems",
@@ -34,41 +28,30 @@ const sponsorTiers = [
   },
   {
     tier: "Silver Sponsors",
-    slots: 4,
     sponsors: [
       {
         name: "Xcel Consolidator Services (I) Pvt Ltd",
         logo: "/sponsor2.png",
-        link: "#"
+        link: "https://share.google/GPZQPJLg9aP4p1ipE"
       },
       {
         name: "BHAGAVAN REALTORS",
         logo: "/sponsor3.png",
         link: "https://www.bhagavanrealtors.com/about-us.htm"
+      },
+      {
+        name: "Confident Engineering Services",
+        logo: "/sponsor4.jpeg",
+        link: "https://confidentengineeringservices.com/gallery.php"
+      },
+      {
+        name: "nth adventure",
+        logo: "/sponsor5.png",
+        link: "https://share.google/9STLTNnNfSMkhwmXH"
       }
     ]
-  },
-  {
-    tier: "Technology Partner",
-    slots: 1,
-    sponsors: []
-  },
-  {
-    tier: "Community Partners",
-    slots: 4,
-    sponsors: []
   }
 ];
-
-const PlaceholderCard = ({ tier }) => (
-  <div className="border-2 border-dashed border-custom-border bg-bg-surface/50 p-8 flex flex-col items-center justify-center min-h-[180px] group transition-all duration-300">
-    <div className="w-12 h-12 border border-dashed border-custom-border rounded-full flex items-center justify-center mb-4 group-hover:border-accent-orange/50 transition-colors">
-      <span className="text-2xl text-text-muted/30 group-hover:text-accent-orange/50">+</span>
-    </div>
-    <p className="font-orbitron text-[10px] uppercase tracking-[0.2em] text-text-muted/40 mb-1">Coming Soon</p>
-    <p className="font-rajdhani text-xs text-text-muted/30">Logo</p>
-  </div>
-);
 
 const SponsorCard = ({ sponsor, isMain = false }) => (
   <motion.a
@@ -132,30 +115,30 @@ const Sponsorship = () => {
         <section className="bg-white py-16 mb-20 relative overflow-hidden">
           {/* Subtle background pattern for the light section */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-          
+
           <div className="container mx-auto px-6 relative z-10 text-center">
             <h2 className="font-orbitron text-bg-base text-xl md:text-2xl mb-8 tracking-[0.3em] uppercase opacity-80">
               {mainTier.tier}
             </h2>
-            
+
             <div className="max-w-3xl mx-auto">
               {mainTier.sponsors.map((sponsor, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   className="flex flex-col items-center"
                 >
-                  <a 
-                    href={sponsor.link} 
-                    target="_blank" 
+                  <a
+                    href={sponsor.link}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="hover:scale-105 transition-transform duration-500 block mb-6"
                   >
-                    <img 
-                      src={sponsor.logo} 
-                      alt={sponsor.name} 
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
                       className="h-20 md:h-28 w-auto object-contain drop-shadow-lg"
                     />
                   </a>
@@ -187,44 +170,19 @@ const Sponsorship = () => {
                 <div className="h-[1px] w-12 bg-custom-border" />
               </div>
 
-              <div className={`grid gap-6 max-w-6xl mx-auto ${
-                tier.slots === 1 ? 'grid-cols-1 max-w-md' : 
-                tier.slots === 2 ? 'grid-cols-1 md:grid-cols-2' : 
-                tier.slots === 3 ? 'grid-cols-1 md:grid-cols-3' : 
-                'grid-cols-2 md:grid-cols-4'
-              }`}>
+              <div className={`grid gap-6 max-w-6xl mx-auto ${tier.sponsors.length === 1 ? 'grid-cols-1 max-w-md' :
+                  tier.sponsors.length === 2 ? 'grid-cols-1 md:grid-cols-2' :
+                    tier.sponsors.length === 3 ? 'grid-cols-1 md:grid-cols-3' :
+                      'grid-cols-2 md:grid-cols-4'
+                }`}>
                 {/* Existing Sponsors */}
                 {tier.sponsors.map((sponsor, sIdx) => (
                   <SponsorCard key={sIdx} sponsor={sponsor} />
-                ))}
-                
-                {/* Placeholder Slots */}
-                {Array.from({ length: Math.max(0, tier.slots - tier.sponsors.length) }).map((_, pIdx) => (
-                  <PlaceholderCard key={`p-${pIdx}`} tier={tier.tier} />
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-32 p-12 border border-custom-border bg-bg-surface/30 text-center max-w-4xl mx-auto"
-        >
-          <h3 className="font-orbitron text-xl mb-6 tracking-widest">BECOME A PARTNER</h3>
-          <p className="text-text-muted font-rajdhani text-lg mb-8 max-w-2xl mx-auto">
-            Join the elite circle of technology leaders and innovators driving the future of defence technology.
-          </p>
-          <Link
-            to="/contact#partner-contact"
-            className="inline-block px-10 py-4 bg-accent-orange text-bg-base font-orbitron text-sm tracking-widest hover:bg-white transition-all duration-300"
-          >
-            GET IN TOUCH
-          </Link>
-        </motion.div>
       </div>
     </motion.div>
   );

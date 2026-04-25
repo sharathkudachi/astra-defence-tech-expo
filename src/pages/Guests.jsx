@@ -154,13 +154,6 @@ const Guests = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
         <GuestCard label="Chief Guest" revealed={true} />
-        <GuestCard label="Guest Speaker" />
-      </div>
-
-      <div className="mt-20 text-center">
-        <p className="text-text-muted text-xs uppercase tracking-[0.2em]">
-          Guest Speaker details will be revealed closer to the event date.
-        </p>
       </div>
     </motion.div>
   );

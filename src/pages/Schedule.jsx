@@ -10,7 +10,6 @@ const Schedule = () => {
     { time: "10:30–11:30 AM", event: "Guest Address 1" },
     { time: "01:00–02:00 PM", event: "Lunch Break" },
     { time: "02:00–04:00 PM", event: "Evaluation Continues (Phase 2)" },
-    { time: "02:30–03:30 PM", event: "Guest Address 2" },
     { time: "04:30 PM", event: "Results Announcement & Prize Distribution" },
   ];
 
