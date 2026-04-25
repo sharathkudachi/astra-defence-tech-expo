@@ -40,11 +40,9 @@ function App() {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
+        // Short delay to ensure content is rendered before scrolling
         setTimeout(() => {
-          const offset = 100; // Updated to match Navbar pill offset
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
     }

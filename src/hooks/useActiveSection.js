@@ -9,44 +9,45 @@ import { useState, useEffect, useRef } from 'react';
 const useActiveSection = (sectionIds) => {
   const [activeId, setActiveId] = useState('');
   
-  // Use a ref to keep track of intersection states for all sections
-  const intersectionStates = useRef({});
-
   useEffect(() => {
-    // Options: A narrow horizontal strip in the middle of the screen
-    // This ensures that the section at the center of the viewer's focus is highlighted.
-    const options = {
-      rootMargin: '-40% 0px -40% 0px',
-      threshold: 0
-    };
-
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        intersectionStates.current[entry.target.id] = entry.isIntersecting;
-      });
-
-      // Find the first section that is intersecting from the top
-      // We iterate in the order they appear in the nav (which matches the DOM)
-      const currentActive = sectionIds.find(id => intersectionStates.current[id]);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
       
-      if (currentActive) {
-        setActiveId(currentActive);
+      // Special case: Check if we are at the very bottom of the page
+      const isAtBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
+      
+      if (isAtBottom) {
+        setActiveId(sectionIds[sectionIds.length - 1]);
+        return;
+      }
+
+      // Find the section that currently contains the middle of the viewport
+      let currentSection = '';
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (element) {
+          const { top, bottom } = element.getBoundingClientRect();
+          const absoluteTop = top + window.scrollY;
+          const absoluteBottom = bottom + window.scrollY;
+          
+          if (scrollPosition >= absoluteTop && scrollPosition <= absoluteBottom) {
+            currentSection = id;
+            break;
+          }
+        }
+      }
+
+      if (currentSection && currentSection !== activeId) {
+        setActiveId(currentSection);
       }
     };
 
-    const observer = new IntersectionObserver(handleIntersect, options);
-
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [sectionIds]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial check
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [sectionIds, activeId]);
 
   return activeId;
 };
