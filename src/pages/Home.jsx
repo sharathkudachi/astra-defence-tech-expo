@@ -59,8 +59,18 @@ const Home = () => {
           <span className="text-2xl md:text-3xl font-orbitron text-accent-amber tracking-widest">30 APR 2026 · BMSIT&M, Bengaluru</span>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-12">
-          <CountdownTimer />
+        <motion.div variants={itemVariants} className="mb-12 flex flex-col md:flex-row gap-8 md:gap-16 items-center justify-center">
+          <CountdownTimer 
+            targetDate="2026-04-30T09:00:00+05:30" 
+            label="Event Countdown" 
+            expiredMessage="THE EXPO IS LIVE!"
+          />
+          <div className="hidden md:block w-[1px] h-16 bg-custom-border opacity-30" />
+          <CountdownTimer 
+            targetDate="2026-04-26T23:59:00+05:30" 
+            label="Registration Deadline" 
+            expiredMessage="REGISTRATION CLOSED"
+          />
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
