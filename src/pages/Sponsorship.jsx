@@ -17,6 +17,16 @@ const sponsorTiers = [
     ]
   },
   {
+    tier: "Co-Powered By",
+    sponsors: [
+      {
+        name: "Blithe",
+        logo: "/sponsor6.jpeg",
+        link: "https://www.blithe.social/"
+      }
+    ]
+  },
+  {
     tier: "Associate Sponsors",
     sponsors: [
       {
