@@ -70,10 +70,11 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 md:px-6 pointer-events-none">
+      {/* Desktop Navbar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className={`relative flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 border pointer-events-auto ${
+        className={`hidden lg:flex relative items-center justify-between px-6 py-3 rounded-full transition-all duration-500 border pointer-events-auto ${
           isScrolled 
             ? 'bg-bg-base/80 backdrop-blur-xl border-accent-orange/30 shadow-[0_4px_30px_rgba(255,107,0,0.15)] w-full max-w-7xl' 
             : 'bg-bg-surface/40 backdrop-blur-md border-white/10 w-full max-w-7xl'
@@ -92,7 +93,7 @@ const Navbar = () => {
         </Link>
 
         {/* Center: Desktop Nav Links */}
-        <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+        <div className="flex items-center space-x-4 xl:space-x-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -119,7 +120,7 @@ const Navbar = () => {
         </div>
 
         {/* Right: Action Buttons */}
-        <div className="hidden lg:flex items-center space-x-3 shrink-0">
+        <div className="flex items-center space-x-3 shrink-0">
           <a
             href="/brochure.pdf"
             download="brochure.pdf"
@@ -134,15 +135,18 @@ const Navbar = () => {
             REGISTER
           </button>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden text-accent-orange text-3xl p-2 h-12 w-12 flex items-center justify-center border border-accent-orange/20 rounded-full transition-all hover:bg-accent-orange/10 active:scale-95"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
-        </button>
       </motion.nav>
+
+      {/* Mobile Hamburger Button — floating, no bar */}
+      <motion.button
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="lg:hidden fixed top-5 right-5 text-accent-orange text-3xl p-2 h-12 w-12 flex items-center justify-center pointer-events-auto"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
+      </motion.button>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
