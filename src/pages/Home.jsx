@@ -65,12 +65,6 @@ const Home = () => {
             label="Event Countdown" 
             expiredMessage="THE EXPO IS LIVE!"
           />
-          <div className="hidden md:block w-[1px] h-16 bg-custom-border opacity-30" />
-          <CountdownTimer 
-            targetDate="2026-04-26T23:59:00+05:30" 
-            label="Registration Deadline" 
-            expiredMessage="REGISTRATION CLOSED"
-          />
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
