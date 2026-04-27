@@ -5,12 +5,12 @@ import { HiShieldCheck, HiSearch } from 'react-icons/hi';
 
 const qualifiedTeams = [
   { team: 'ADGM',                 leader: 'Riya Pereira' },
+  { team: 'Aera',                  leader: 'Eshaan agrawal' },
   { team: 'Anonymous_xyz',        leader: 'Revanth Vishnu Reddy C B' },
   { team: 'Athena Forge',         leader: 'Prathiksha Gajula' },
   { team: 'Digital Defence Force',leader: 'Aniket Bindal' },
   { team: 'drishti',              leader: 'Bhardwaj B R' },
   { team: 'Elite',                leader: 'Spandana' },
-  { team: 'era',                  leader: 'eeshan agarwal' },
   { team: 'GENESIS',              leader: 'Hemanth S' },
   { team: 'GuardRail',            leader: 'Vignesh Vellore Venkatesh' },
   { team: 'GunSaviours',          leader: 'Om Basant Singh' },
