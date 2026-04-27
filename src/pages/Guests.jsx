@@ -95,12 +95,13 @@ const GuestCard = ({ label, revealed = false }) => (
                 Brigadier B. M. Cariappa, <br /> VrC, SM (Retd.)
               </h2>
               <p className="text-accent-orange font-rajdhani text-sm uppercase tracking-[.2em] mb-6">
-                Kargil War Veteran · Vir Chakra Awardee
+                Kargil War Veteran · Vir Chakra Awardee · Sena Medal Awardee
               </p>
 
               <div className="flex flex-wrap gap-3">
                 <span className="px-3 py-1 border border-accent-orange/30 text-accent-orange font-rajdhani text-[10px] uppercase tracking-widest">Kargil Veteran</span>
                 <span className="px-3 py-1 border border-accent-orange/30 text-accent-orange font-rajdhani text-[10px] uppercase tracking-widest">Vir Chakra</span>
+                <span className="px-3 py-1 border border-accent-orange/30 text-accent-orange font-rajdhani text-[10px] uppercase tracking-widest">Sena Medal</span>
                 <span className="px-3 py-1 border border-accent-orange/30 text-accent-orange font-rajdhani text-[10px] uppercase tracking-widest">Strategic Command</span>
               </div>
             </div>

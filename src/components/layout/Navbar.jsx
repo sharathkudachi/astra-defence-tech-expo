@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: 'SCHEDULE', path: '/#schedule', id: 'schedule' },
     { name: 'GUESTS', path: '/#guests', id: 'guests' },
     { name: 'SPONSORS', path: '/#sponsors', id: 'sponsors' },
+    { name: 'RESULTS', path: '/#results', id: 'results' },
     { name: 'REGISTER', path: '/#register', id: 'register' },
     { name: 'CONTACT', path: '/#contact', id: 'contact' },
   ];
