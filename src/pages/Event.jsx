@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   GiRobotLeg, 
   GiArtificialIntelligence, 
@@ -8,28 +8,9 @@ import {
   GiProcessor, 
   GiRadarSweep, 
   GiDeliveryDrone,
-  GiCheckMark,
-  GiShield
 } from 'react-icons/gi';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const Event = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const sappersImages = [
-    "/sappiers1.webp",
-    "/sappiers2.webp",
-    "/sappiers3.webp",
-    "/sappiers4.webp",
-    "/sappiers5.webp"
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % sappersImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
   const domains = [
     { title: "Robotics & Autonomous Systems in Defence Technology", icon: <GiRobotLeg />, desc: "UGVs, rescue robots, and automated surveillance systems. Emphasis on navigation in unstructured environments and task automation." },
     { title: "AI & Machine Learning in Defence Technology", icon: <GiArtificialIntelligence />, desc: "Predictive analytics, target recognition, and intelligent command systems. Using data to stay three steps ahead of the adversary." },
@@ -62,12 +43,6 @@ const Event = () => {
       ],
       note: "Judged on innovation, feasibility, presentation, and defence relevance."
     }
-  ];
-
-  const evaluators = [
-    { acronym: "DRDO", full: "Defence Research & Development Org", role: "Weapon systems & strategic hardware" },
-    { acronym: "BEL", full: "Bharat Electronics Limited", role: "Radar & communication systems" },
-    { acronym: "BDL", full: "Bharat Dynamics Limited", role: "Guided missiles & munitions" }
   ];
 
   return (
@@ -108,91 +83,6 @@ const Event = () => {
         </div>
       </section>
 
-      {/* Special Feature: Madras Sappers */}
-      <section className="mb-32">
-        <div className="border border-accent-orange/50 bg-bg-surface p-8 md:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(255,107,0,0.05)]">
-          <div className="absolute top-0 right-0 p-4 opacity-5">
-            <GiShield className="text-[200px] text-accent-orange translate-x-20 -translate-y-20" />
-          </div>
-          
-          <div className="flex flex-col lg:flex-row gap-12 items-start relative z-10">
-            <div className="w-full lg:w-1/2">
-              <span className="label-badge text-accent-orange mb-4 inline-block">Special Combat Engineering Display</span>
-              <h3 className="text-3xl md:text-4xl font-orbitron text-text-primary mb-8 uppercase tracking-widest leading-tight">
-                Madras Sappers <br /><span className="text-accent-orange">(MEG & Centre)</span>
-              </h3>
-              
-              <div className="space-y-6 text-text-muted font-inter leading-relaxed text-sm md:text-base border-l-2 border-accent-orange/30 pl-6">
-                <p>
-                  The Madras Engineer Group (MEG & Centre), popularly known as the Madras Sappers, is one of the oldest and most distinguished regiments of the Indian Army’s Corps of Engineers. With a legacy that dates back to the 18th century, the Madras Sappers have played a critical role in shaping India’s military engineering capabilities across generations.
-                </p>
-                <p>
-                  Renowned for their expertise in combat engineering, infrastructure development, and battlefield support, the regiment has contributed significantly in areas such as mobility, counter-mobility, fortifications, and disaster response operations.
-                </p>
-                <p>
-                  At ASTRA Defence Tech Expo 2026, the Madras Sappers (MEG & Centre) will be showcasing a range of their engineering equipment, field technologies, and operational capabilities, offering participants a rare opportunity to witness real-world defence systems up close.
-                </p>
-                <p className="text-text-primary font-bold italic">
-                  Their presence bridges the gap between academic innovation and practical defence applications, giving students direct exposure to the technologies and systems used by the Indian Army.
-                </p>
-              </div>
-            </div>
-            
-            <div className="w-full lg:w-1/2">
-               <div className="relative group">
-                 <div className="aspect-[16/10] relative overflow-hidden border border-accent-orange/20 bg-black/40">
-                   <AnimatePresence mode="wait">
-                     <motion.img
-                       key={currentImage}
-                       src={sappersImages[currentImage]}
-                       initial={{ opacity: 0, x: 20 }}
-                       animate={{ opacity: 1, x: 0 }}
-                       exit={{ opacity: 0, x: -20 }}
-                       transition={{ duration: 0.5 }}
-                       className="w-full h-full object-cover"
-                     />
-                   </AnimatePresence>
-                   
-                   {/* Navigation Dots */}
-                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                     {sappersImages.map((_, idx) => (
-                       <button
-                         key={idx}
-                         onClick={() => setCurrentImage(idx)}
-                         className={`w-2 h-2 rounded-full transition-all ${
-                           currentImage === idx ? 'bg-accent-orange w-6' : 'bg-white/30 hover:bg-white/50'
-                         }`}
-                       />
-                     ))}
-                   </div>
-
-                   {/* Arrows */}
-                   <button 
-                     onClick={() => setCurrentImage((prev) => (prev - 1 + sappersImages.length) % sappersImages.length)}
-                     className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                   >
-                     <HiChevronLeft size={24} />
-                   </button>
-                   <button 
-                     onClick={() => setCurrentImage((prev) => (prev + 1) % sappersImages.length)}
-                     className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                   >
-                     <HiChevronRight size={24} />
-                   </button>
-                 </div>
-               </div>
-               
-               <div className="mt-8 p-6 bg-accent-orange/5 border border-accent-orange/20">
-                  <p className="font-orbitron text-[10px] tracking-widest text-accent-orange uppercase mb-2">Operational Status</p>
-                  <p className="text-text-primary font-rajdhani text-sm uppercase font-bold tracking-widest">
-                    Live Display · Equipment Showcase · Interactive Session
-                  </p>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Selection Process */}
       <section className="mb-32 max-w-4xl mx-auto">
         <h2 className="text-2xl font-orbitron mb-16 text-center">SELECTION PROTOCOL</h2>
@@ -204,13 +94,13 @@ const Event = () => {
                 <span className="label-badge text-accent-orange mb-2 block">{step.step}</span>
                 <h3 className="text-2xl font-orbitron mb-6">{step.title}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                   <ul className="space-y-3">
-                     {step.details.map((detail, i) => (
-                       <li key={i} className="text-text-muted text-sm flex items-center">
-                         <span className="w-1.5 h-1.5 bg-accent-orange mr-3" /> {detail}
-                       </li>
-                     ))}
-                   </ul>
+                  <ul className="space-y-3">
+                    {step.details.map((detail, i) => (
+                      <li key={i} className="text-text-muted text-sm flex items-center">
+                        <span className="w-1.5 h-1.5 bg-accent-orange mr-3" /> {detail}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

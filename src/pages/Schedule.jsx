@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { 
   Mic2, 
   ClipboardCheck, 
-  Shield, 
   User, 
   Utensils, 
   Users, 
@@ -39,12 +38,6 @@ const Schedule = () => {
           icon: <ClipboardCheck className="w-6 h-6" />
         },
         {
-          title: "EQUIPMENT DISPLAY",
-          location: "Sir MV Block",
-          description: "Equipment Display by Madras Engineering Group from Indian Army",
-          icon: <Shield className="w-6 h-6" />
-        },
-        {
           title: "GUEST SESSION",
           location: "BSN Auditorium",
           timeSub: "10:30 AM – 12:30 PM",
@@ -66,16 +59,11 @@ const Schedule = () => {
     },
     {
       time: "2:00 PM – 3:00 PM",
-      type: "parallel",
-      label: "PARALLEL EVENTS",
+      type: "single",
       events: [
         {
           title: "PROJECT EVALUATION CONTINUES",
           icon: <ClipboardCheck className="w-6 h-6" />
-        },
-        {
-          title: "EQUIPMENT DISPLAY CONTINUES",
-          icon: <Shield className="w-6 h-6" />
         }
       ]
     },
