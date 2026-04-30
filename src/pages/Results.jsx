@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { GiMedal, GiTrophy } from 'react-icons/gi';
-import { HiShieldCheck, HiSearch } from 'react-icons/hi';
+import { GiMedal, GiTrophy, GiLaurelCrown } from 'react-icons/gi';
+import { HiShieldCheck, HiSearch, HiStar } from 'react-icons/hi';
 
+/* ─── Round 1 → Round 2 Qualified Teams (alphabetical) ─── */
 const qualifiedTeams = [
   { team: 'ADGM',                 leader: 'Riya Pereira' },
-  { team: 'Aegis Sentinel',       leader: 'Charan N N' },
-  { team: 'Aera',                 leader: 'Eshaan agrawal' },
   { team: 'Anonymous_xyz',        leader: 'Revanth Vishnu Reddy C B' },
-  { team: 'Astra Core',           leader: 'Gagandeep N' },
   { team: 'Athena Forge',         leader: 'Prathiksha Gajula' },
   { team: 'Digital Defence Force',leader: 'Aniket Bindal' },
-  { team: 'Defence Devils ',      leader: 'Shruthi Bomma' },
   { team: 'drishti',              leader: 'Bhardwaj B R' },
   { team: 'Elite',                leader: 'Spandana' },
+  { team: 'era',                  leader: 'eeshan agarwal' },
   { team: 'GENESIS',              leader: 'Hemanth S' },
   { team: 'GuardRail',            leader: 'Vignesh Vellore Venkatesh' },
   { team: 'GunSaviours',          leader: 'Om Basant Singh' },
@@ -45,6 +43,26 @@ const qualifiedTeams = [
   { team: 'YAL',                  leader: 'MOHAMED IDREES A S' },
 ];
 
+/* ─── Round 2 Final Results (in order as given) ─── */
+const round2Results = [
+  { team: 'Holoscout',    leader: 'Yash Parkhi',          rank: 1, label: 'Winner' },
+  { team: 'Team Elite',   leader: 'Tejaswi Raja',          rank: 2, label: '1st Runner-Up' },
+  { team: 'Stalwarts',    leader: 'Ashil Jermine George',  rank: 3, label: '2nd Runner-Up' },
+  { team: 'Veer Rakshak', leader: 'Prajwal N R',           rank: 4 },
+  { team: 'ADGM',         leader: 'Riya Pereira',          rank: 5 },
+  { team: 'SNYPTER',      leader: 'Prarthana V',           rank: 6 },
+  { team: 'Modulyn',      leader: 'Gaurav I K',            rank: 7 },
+  { team: 'Eagle',        leader: 'Abhiram Adiga',         rank: 8 },
+  { team: 'STAR Rocketry',leader: 'Dhruv Kakade',          rank: 9 },
+  { team: 'SonicVault',   leader: 'Kamal Reddy',           rank: 10 },
+];
+
+const podiumConfig = {
+  1: { color: 'text-yellow-400', border: 'border-yellow-400/60', bg: 'bg-yellow-400/10', glow: 'shadow-[0_0_30px_rgba(250,204,21,0.2)]', icon: '🥇' },
+  2: { color: 'text-slate-300',  border: 'border-slate-300/60',  bg: 'bg-slate-300/10',  glow: 'shadow-[0_0_20px_rgba(203,213,225,0.15)]', icon: '🥈' },
+  3: { color: 'text-amber-600',  border: 'border-amber-600/60',  bg: 'bg-amber-600/10',  glow: 'shadow-[0_0_20px_rgba(217,119,6,0.15)]', icon: '🥉' },
+};
+
 const Results = () => {
   const [query, setQuery] = useState('');
 
@@ -55,10 +73,11 @@ const Results = () => {
           e.team.toLowerCase().includes(query.toLowerCase()) ||
           e.leader.toLowerCase().includes(query.toLowerCase())
       );
+
   return (
     <div className="container mx-auto px-6 py-32 relative" id="results">
 
-      {/* Header */}
+      {/* ── Header ── */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -67,18 +86,31 @@ const Results = () => {
         className="text-center mb-16"
       >
         <span className="font-rajdhani text-accent-orange/60 tracking-[0.4em] uppercase text-xs mb-4 block font-black">
-          Round 2 · ASTRA Defence Tech Expo 2026
+          ASTRA Defence Tech Expo 2026 · BMSIT&amp;M
         </span>
         <h1 className="text-4xl md:text-7xl font-orbitron font-black mb-4 tracking-tighter italic">
-          QUALIFIED <span className="text-accent-orange">TEAMS</span>
+          RESULTS
         </h1>
-        <p className="text-text-muted font-rajdhani text-base md:text-lg tracking-wide max-w-2xl mx-auto mb-6">
-          The following teams have qualified for{' '}
-          <span className="text-text-primary font-semibold">Round 2</span> of the ASTRA Defence Tech Expo at{' '}
-          <span className="text-text-primary font-semibold">BMS Institute of Technology &amp; Management</span> on{' '}
-          <span className="text-accent-orange font-semibold">30 April 2026</span>.
-        </p>
         <div className="w-24 h-1 bg-accent-orange mx-auto" />
+      </motion.div>
+
+      {/* ══════════════════════════════════════════
+          SECTION 1 — ROUND 1 SELECTION (Qualified)
+      ══════════════════════════════════════════ */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, delay: 0.05 }}
+        className="mb-6"
+      >
+        <div className="flex items-center gap-4 max-w-4xl mx-auto mb-8">
+          <div className="h-px flex-1 bg-custom-border" />
+          <h2 className="font-orbitron font-black text-xl md:text-2xl tracking-widest uppercase text-text-primary">
+            Round 1 <span className="text-accent-orange">Selection</span>
+          </h2>
+          <div className="h-px flex-1 bg-custom-border" />
+        </div>
       </motion.div>
 
       {/* Stats bar */}
@@ -87,7 +119,7 @@ const Results = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="flex flex-wrap items-center justify-center gap-6 mb-12"
+        className="flex flex-wrap items-center justify-center gap-6 mb-10"
       >
         <div className="flex items-center gap-3 px-6 py-3 border border-accent-orange/30 bg-bg-surface">
           <GiTrophy className="text-accent-orange text-2xl" />
@@ -111,7 +143,7 @@ const Results = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="max-w-3xl mx-auto mb-12 bg-bg-surface border border-accent-orange/30 p-6 relative overflow-hidden"
+        className="max-w-4xl mx-auto mb-8 bg-bg-surface border border-accent-orange/30 p-6 relative overflow-hidden"
       >
         <div className="absolute top-0 left-0 w-1 h-full bg-accent-orange" />
         <div className="relative z-10 pl-4">
@@ -169,29 +201,26 @@ const Results = () => {
         )}
       </motion.div>
 
-      {/* Table */}
+      {/* Round 1 Table */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl mx-auto mb-32"
       >
-        {/* Table header */}
         <div className="grid grid-cols-[3rem_1fr_1fr] gap-4 px-4 md:px-6 py-3 border-b-2 border-accent-orange/50 mb-1 bg-bg-surface">
           <span className="font-orbitron text-[10px] text-accent-orange uppercase tracking-widest">#</span>
           <span className="font-orbitron text-[10px] text-accent-orange uppercase tracking-widest">Team Name</span>
           <span className="font-orbitron text-[10px] text-accent-orange uppercase tracking-widest">Team Leader</span>
         </div>
-
-        {/* Rows */}
         {filtered.length === 0 ? (
           <div className="py-16 text-center">
             <p className="font-orbitron text-text-muted text-sm uppercase tracking-widest">No teams match "{query}"</p>
             <p className="font-rajdhani text-text-muted/60 text-xs mt-2 uppercase tracking-widest">Try a different name</p>
           </div>
         ) : (
-          filtered.map((entry, idx) => (
+          filtered.map((entry) => (
             <div
               key={entry.team}
               className="grid grid-cols-[3rem_1fr_1fr] gap-4 px-4 md:px-6 py-4 border-b border-custom-border hover:bg-accent-orange/[0.05] transition-colors group"
@@ -203,22 +232,136 @@ const Results = () => {
                 <GiMedal className="text-accent-orange/50 text-sm shrink-0 group-hover:text-accent-orange transition-colors" />
                 <span className={`font-orbitron text-xs md:text-sm uppercase tracking-wide leading-snug truncate ${
                   query && entry.team.toLowerCase().includes(query.toLowerCase())
-                    ? 'text-accent-orange'
-                    : 'text-text-primary'
+                    ? 'text-accent-orange' : 'text-text-primary'
                 }`}>
                   {entry.team}
                 </span>
               </div>
               <span className={`font-rajdhani text-sm font-semibold tracking-wide group-hover:text-text-primary transition-colors ${
                 query && entry.leader.toLowerCase().includes(query.toLowerCase())
-                  ? 'text-accent-orange'
-                  : 'text-text-muted'
+                  ? 'text-accent-orange' : 'text-text-muted'
               }`}>
                 {entry.leader}
               </span>
             </div>
           ))
         )}
+      </motion.div>
+
+      {/* ══════════════════════════════════════════
+          SECTION 2 — ROUND 2 FINAL RESULTS
+      ══════════════════════════════════════════ */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5 }}
+        className="mb-10"
+      >
+        <div className="flex items-center gap-4 max-w-4xl mx-auto mb-4">
+          <div className="h-px flex-1 bg-custom-border" />
+          <h2 className="font-orbitron font-black text-xl md:text-2xl tracking-widest uppercase text-text-primary">
+            Round 2 <span className="text-accent-orange">Results</span>
+          </h2>
+          <div className="h-px flex-1 bg-custom-border" />
+        </div>
+        <p className="text-center font-rajdhani text-text-muted text-sm uppercase tracking-widest mb-12">
+          Final Rankings · 30 April 2026 · BMSIT&amp;M, Bengaluru
+        </p>
+      </motion.div>
+
+      {/* Top 10 callout banner */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, delay: 0.05 }}
+        className="max-w-4xl mx-auto mb-10 text-center"
+      >
+        <div className="inline-flex flex-col items-center gap-3 px-8 py-6 border border-accent-orange/30 bg-bg-surface relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.06)_0%,transparent_70%)] pointer-events-none" />
+          <div className="flex items-center gap-3 relative z-10">
+            <GiLaurelCrown className="text-accent-orange text-3xl" />
+            <span className="font-orbitron font-black text-xl md:text-2xl tracking-widest uppercase text-text-primary">
+              Top <span className="text-accent-orange">10</span> Teams of the Expo
+            </span>
+            <GiLaurelCrown className="text-accent-orange text-3xl scale-x-[-1]" />
+          </div>
+          <p className="font-rajdhani text-text-muted text-sm md:text-base tracking-wide relative z-10">
+            Congratulations to the finest innovators at ASTRA Defence Tech Expo 2026
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Podium — Top 3 */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
+      >
+        {round2Results.slice(0, 3).map((entry) => {
+          const cfg = podiumConfig[entry.rank];
+          return (
+            <motion.div
+              key={entry.rank}
+              whileHover={{ y: -6 }}
+              className={`relative border ${cfg.border} ${cfg.bg} ${cfg.glow} p-8 flex flex-col items-center text-center ${entry.rank === 1 ? 'md:order-2' : entry.rank === 2 ? 'md:order-1' : 'md:order-3'}`}
+            >
+              {/* Corner accents */}
+              <div className={`absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 ${cfg.border}`} />
+              <div className={`absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 ${cfg.border}`} />
+              <div className={`absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 ${cfg.border}`} />
+              <div className={`absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 ${cfg.border}`} />
+
+              <span className="text-5xl mb-4">{cfg.icon}</span>
+              <span className={`font-orbitron text-[10px] font-black tracking-[0.3em] uppercase mb-3 ${cfg.color}`}>
+                {entry.label}
+              </span>
+              <h3 className={`font-orbitron font-black text-lg md:text-xl uppercase tracking-wide mb-2 ${cfg.color}`}>
+                {entry.team}
+              </h3>
+              <p className="font-rajdhani text-text-muted text-sm font-semibold tracking-wide">
+                {entry.leader}
+              </p>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+
+      {/* Remaining ranked teams (4–10) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="max-w-4xl mx-auto"
+      >
+        <div className="grid grid-cols-[3rem_1fr_1fr] gap-4 px-4 md:px-6 py-3 border-b-2 border-accent-orange/30 mb-1 bg-bg-surface">
+          <span className="font-orbitron text-[10px] text-accent-orange uppercase tracking-widest">Rank</span>
+          <span className="font-orbitron text-[10px] text-accent-orange uppercase tracking-widest">Team Name</span>
+          <span className="font-orbitron text-[10px] text-accent-orange uppercase tracking-widest">Team Leader</span>
+        </div>
+        {round2Results.slice(3).map((entry) => (
+          <div
+            key={entry.team}
+            className="grid grid-cols-[3rem_1fr_1fr] gap-4 px-4 md:px-6 py-4 border-b border-custom-border hover:bg-accent-orange/[0.04] transition-colors group"
+          >
+            <span className="font-orbitron text-xs text-text-muted group-hover:text-accent-orange/70 transition-colors">
+              #{entry.rank}
+            </span>
+            <div className="flex items-center gap-2 min-w-0">
+              <HiStar className="text-accent-orange/40 text-sm shrink-0 group-hover:text-accent-orange/70 transition-colors" />
+              <span className="font-orbitron text-xs md:text-sm text-text-primary uppercase tracking-wide leading-snug truncate">
+                {entry.team}
+              </span>
+            </div>
+            <span className="font-rajdhani text-sm text-text-muted font-semibold tracking-wide group-hover:text-text-primary transition-colors">
+              {entry.leader}
+            </span>
+          </div>
+        ))}
       </motion.div>
 
       {/* Decorative accents */}
