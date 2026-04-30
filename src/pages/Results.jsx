@@ -54,7 +54,7 @@ const round2Results = [
   { team: 'Modulyn',      leader: 'Gaurav I K',            rank: 7 },
   { team: 'Eagle',        leader: 'Abhiram Adiga',         rank: 8 },
   { team: 'STAR Rocketry',leader: 'Dhruv Kakade',          rank: 9 },
-  { team: 'SonicVault',   leader: 'Kamal Reddy',           rank: 10 },
+  { team: 'The End Effectors',   leader: 'Swapnil Biswas',           rank: 10 },
 ];
 
 const podiumConfig = {
@@ -278,7 +278,7 @@ const Results = () => {
         transition={{ duration: 0.5, delay: 0.05 }}
         className="max-w-4xl mx-auto mb-10 text-center"
       >
-        <div className="inline-flex flex-col items-center gap-3 px-8 py-6 border border-accent-orange/30 bg-bg-surface relative overflow-hidden">
+        <div className="inline-flex flex-col items-center gap-3 px-8 py-6 border border-accent-orange/30 bg-bg-surface relative overflow-hidden" id="top10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.06)_0%,transparent_70%)] pointer-events-none" />
           <div className="flex items-center gap-3 relative z-10">
             <GiLaurelCrown className="text-accent-orange text-3xl" />

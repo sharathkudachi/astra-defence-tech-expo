@@ -5,7 +5,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
 import PanelNotification from './components/common/PanelNotification';
-import ResultsBanner from './components/common/ResultsBanner';
 
 // Pages (to be implemented)
 import Home from './pages/Home';
@@ -54,7 +53,6 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-bg-base text-text-primary selection:bg-accent-orange selection:text-bg-base">
-      <ResultsBanner />
       <div className="hex-grid-overlay opacity-30" />
       <Navbar />
       <main className="relative z-10">
